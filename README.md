@@ -24,9 +24,9 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] Create an account (MVP)
 - [ ] Log in / Log out, including as a Guest/Demo User (MVP)
 - [ ] Create, read, edit, and delete jobs (MVP)
-- [ ] Organizejobss within JobTypes (MVP)
-- [ ] Tagjobss with multiple tags (expected feature, but not MVP)
-- [ ] Apply complex styling tjobses while editing (expected feature, but not MVP)
+- [ ] Organize jobs within JobTypes (MVP)
+- [ ] Tag jobs with multiple tags (expected feature, but not MVP)
+- [ ] Apply complex styling to jobs while editing (expected feature, but not MVP)
 
 ## Design Docs
 * [View Wireframes][views]
@@ -131,11 +131,7 @@ which has its own `Index` view.
 - [ ] Add modals, transitions, and other styling flourishes.
 
 ### Bonus Features (TBD)
-- [ ] Searchjobsughjobes for blocks of text
-- [ ] Pagination / infinite sJobl for Jobs Index
-- [ ] Set remjobss onjobes
-- [ ] ChanJobgs for Jobs
-- [ ] Multiple sessions
+- [ ] TBD
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
