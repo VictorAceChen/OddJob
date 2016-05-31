@@ -51,16 +51,6 @@ var LoginForm = React.createClass({
     }
 	},
 
-  fieldErrors: function (field) {
-    var errors = ErrorStore.formErrors(this.formType());
-    if (!errors[field]) { return; }
-
-    var messages = errors[field].map(function (errorMsg, i) {
-      return <li key={ i }>{ errorMsg }</li>;
-    });
-
-    return <ul>{ messages }</ul>;
-  },
 
   formType: function () {
     return this.props.location.pathname.slice(1);
@@ -76,24 +66,24 @@ var LoginForm = React.createClass({
 
 		return (
 			<form onSubmit={this.handleSubmit}>
-        { this.formType() }  { navLink }
-
-        { this.fieldErrors("base") }
+        { this.formType() }
 
         <br />
 				<label> Username:
-          { this.fieldErrors("username") }
 					<input type="text" valueLink={this.linkState("username")} />
 				</label>
 
         <br />
 				<label> Password:
-          { this.fieldErrors("password") }
 					<input type="password" valueLink={this.linkState("password")} />
 				</label>
 
         <br />
 				<input type="submit" value="Submit" />
+
+        <br></br>
+        <br></br>
+        { navLink }
 			</form>
 		);
 	}
