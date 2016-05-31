@@ -1,0 +1,36 @@
+{
+  "name": "OddJob",
+  "version": "1.0.0",
+  "description": "find freelance and temp work!",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VictorAceChen/OddJob.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VictorAceChen/OddJob/issues"
+  },
+  "homepage": "https://github.com/VictorAceChen/OddJob#readme",
+  "devDependencies": {
+    "babel-core": "^6.2.0",
+    "babel-loader": "^6.2.0",
+    "babel-preset-react": "^6.1.18",
+    "webpack": "^1.12.2"
+  },
+  "dependencies": {
+    "flux": "^2.1.1",
+    "react": "^0.14.2",
+    "react-addons-linked-state-mixin": "^0.14.8",
+    "react-dom": "^0.14.2",
+    "react-router": "2.0.1"
+  }
+}
