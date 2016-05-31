@@ -25,6 +25,13 @@
     "babel-loader": "^6.2.0",
     "babel-preset-react": "^6.1.18",
     "webpack": "^1.12.2"
+  },  "engines": {
+   "node": "5.1.0",
+   "npm": "3.3.12"
+  },
+
+  "scripts": {
+   "postinstall": "./node_modules/.bin/webpack"
   },
   "dependencies": {
     "flux": "^2.1.1",
