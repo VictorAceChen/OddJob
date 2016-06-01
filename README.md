@@ -2,12 +2,12 @@
 
 [Heroku link][heroku] **NB:** This should be a link to your production site
 
-[heroku]: http://www.herokuapp.com
+[heroku]: oddjobappacademy.herokuapp.com
 
 ## Minimum Viable Product
 OddJob is a web application inspired by Indeed that will be build using Ruby on Rails and React.js.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
 
-- [ ] New account creation, login, and guest/demo login
+- [X] New account creation, login, and guest/demo login
 - [ ] Smooth, bug-free navigation
 - [ ] Adequate seed data to demonstrate the site's features
 - [ ] The minimally necessary features for Indeed-inspired site: job creation and saving, job editing, and jobs organized into jobTypes
@@ -21,8 +21,8 @@ OddJob will allow users to do the following:
 <!-- This is a Markdown checklist. Use it to keep track of your
 progress. Put an x between the brackets for a checkmark: [x] -->
 
-- [ ] Create an account (MVP)
-- [ ] Log in / Log out, including as a Guest/Demo User (MVP)
+- [X] Create an account (MVP)
+- [X] Log in / Log out, including as a Guest/Demo User (MVP)
 - [ ] Create, read, edit, and delete jobs (MVP)
 - [ ] Organize jobs within JobTypes (MVP)
 - [ ] Tag jobs with multiple tags (expected feature, but not MVP)
@@ -47,19 +47,19 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **Objective:** Functioning rails project with Authentication
 
-- [ ] create new project
-- [ ] create `User` model
-- [ ] authentication
-- [ ] user signup/signin pages
-- [ ] blank landing page after signin
+- [X] create new project
+- [X] create `User` model
+- [X] authentication
+- [X] user signup/signin pages
+- [X] blank landing page after signin
 
 ### Phase 2: Jobs Model, API, and basic APIUtil (1.5 days)
 
 **Objective:**Jobs can be created, read, edited and destroyed through
 the API.
 
-- [ ] create Job model
-- [ ] seed the database with a small amount of test data
+- [X] create Job model
+- [X] seed the database with a small amount of test data
 - [ ] CRUD API for jobs (JobsController`)
 - [ ] jBuilder views jobs
 - [ ] setup Webpack & Flux scaffold

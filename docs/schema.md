@@ -5,11 +5,11 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 title       | string    | not null
-body        | text      | not null
-location    | text      | not null
-author_id   | integer   | not null, foreign key (references users), indexed
-jobType_id | integer   | not null, foreign key (references jobTypes), indexed
-archived    | boolean   | not null, default: false
+description | text      | not null
+location    | text      |
+employer_id | integer   | not null, foreign key (references users), indexed
+jobtype     | string    |
+salary      | integer   |
 
 ## jobTypes
 column name | data type | details
