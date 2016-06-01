@@ -57,34 +57,60 @@ var LoginForm = React.createClass({
   },
 
 	render: function () {
+    var formTitle;
     var navLink;
+    var greeting;
     if (this.formType() === "login") {
-      navLink = <Link to="/signup">sign up instead</Link>;
+      formTitle = "Create An Account";
+      navLink = <a href="/signup">Create an account free</a>;
+      greeting = "Not a member? ";
     } else {
-      navLink = <Link to="/login">log in instead</Link>;
+      formTitle = "Sign In";
+      navLink = <a href="/login">Sign In</a>;
+      greeting = "Already have an account? ";
     }
 
+    var entryForm = (
+        <form id="loginform" name="loginform" onSubmit={this.handleSubmit}>
+          <div className="form_content">
+
+            <label htmlFor="signin_email" className="input_label">Username:</label>
+              <input type="text"
+                id="signin_email"
+                className="line_item input_text"
+                valueLink={this.linkState("username")} />
+              <br/>
+            <label htmlFor="signin_password" className="input_label">Password:</label>
+              <input type="password"
+                id="signin_password"
+                className="line_item input_password"
+                valueLink={this.linkState("password")} />
+
+            <input type="submit" value="Submit" className="input_submit button blueButton"/>
+          </div>
+        </form>
+    );
+
 		return (
-			<form onSubmit={this.handleSubmit}>
-        { this.formType() }
+      <div>
+      <body>
+        <table id="signin_task_2col" align="center">
+          <tbody>
+            <tr>
+              <td id="col_a2" className="col">
+                <h1>{ formTitle }</h1>
+                <p className="sign_up_prompt">{ greeting }{ navLink }</p>
+                {entryForm}
+              </td>
+              <td id="col_b2" className="col">
+                <img src={window.placeholderUrl}/>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </body>
+    </div>
 
-        <br />
-				<label> Username:
-					<input type="text" valueLink={this.linkState("username")} />
-				</label>
-
-        <br />
-				<label> Password:
-					<input type="password" valueLink={this.linkState("password")} />
-				</label>
-
-        <br />
-				<input type="submit" value="Submit" />
-
-        <br></br>
-        <br></br>
-        { navLink }
-			</form>
 		);
 	}
 });

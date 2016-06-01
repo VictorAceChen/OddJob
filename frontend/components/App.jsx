@@ -12,13 +12,11 @@ var App = React.createClass({
 
   greeting: function(){
     if (SessionStore.isUserLoggedIn()) {
-      var numFavoriteBenches = SessionStore.currentUser().favorite_benches.length;
 
     	return (
     		<hgroup>
     			<h2>Hi, {SessionStore.currentUser().username}!</h2>
     			<input type="submit" value="logout" onClick={ SessionApiUtil.logout } />
-    			<h3>You have {numFavoriteBenches} favorite benches!</h3>
     		</hgroup>
     	);
     } else if (["/login", "/signup"].indexOf(this.props.location.pathname) === -1) {
