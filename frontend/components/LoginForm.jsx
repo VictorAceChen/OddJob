@@ -62,13 +62,14 @@ var LoginForm = React.createClass({
     var greeting;
     if (this.formType() === "login") {
       formTitle = "Create An Account";
-      navLink = <a href="/signup">Create an account free</a>;
+      navLink = <Link to="/signup" activeClassName="current">Create an account free</Link>;
       greeting = "Not a member? ";
     } else {
       formTitle = "Sign In";
-      navLink = <a href="/login">Sign In</a>;
+      navLink = <Link to="/login" activeClassName="current">Sign In</Link>;
       greeting = "Already have an account? ";
     }
+ 
 
     var entryForm = (
         <form id="loginform" name="loginform" onSubmit={this.handleSubmit}>
@@ -93,22 +94,24 @@ var LoginForm = React.createClass({
 
 		return (
       <div>
-      <body>
-        <table id="signin_task_2col" align="center">
-          <tbody>
-            <tr>
-              <td id="col_a2" className="col">
-                <h1>{ formTitle }</h1>
-                <p className="sign_up_prompt">{ greeting }{ navLink }</p>
-                {entryForm}
-              </td>
-              <td id="col_b2" className="col">
-                <img src={window.placeholderUrl}/>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </body>
+        <div className="separator_top separator">&nbsp;</div>
+        <body>
+          <table id="signin_task_2col" align="center">
+            <tbody>
+              <tr>
+                <td id="col_a2" className="col">
+                  <h1>{ formTitle }</h1>
+                  <p className="sign_up_prompt">{ greeting }{ navLink }</p>
+                  {entryForm}
+                </td>
+                <td id="col_b2" className="col">
+                  <img src={window.placeholderUrl}/>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </body>
+        <div className="separator_bottom separator">&nbsp;</div>
     </div>
 
 		);

@@ -14,3 +14,17 @@
  *= require_tree .
  *= require_self
  */
+
+ .separator_top {
+     border-top: 1px solid #36c;
+     background: #e0e5ff;
+     margin-bottom: 1em;
+     color: #808080;
+     font-weight: bold;
+ }
+
+ .separator_bottom {
+     border-bottom: 1px solid #36c;
+     background: #e0e5ff;
+     margin-top: 1em;
+ }
