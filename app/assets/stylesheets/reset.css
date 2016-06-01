@@ -1,4 +1,4 @@
-/*html, head, body, header,
+html, head, body, header,
 nav, h1, a, ul, li, main,
 section, p, footer, small {
   margin: 0;
@@ -29,4 +29,4 @@ ul {
   content: "";
   display: block;
   clear: both;
-}*/
+}

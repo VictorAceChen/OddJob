@@ -22,18 +22,13 @@ body {
     vertical-align: top;
 }
 
-body, td {
-    font-family: arial,sans-serif;
-    font-size: 10pt;
-}
-
-
 h1.h1c, h2.h2c {
     font-weight: normal;
     font-size: 24px;
     margin: 0;
     padding: 0 12px;
 }
+
 h1 {
     font-size: 14.5pt;
     margin: 8px 0 0 12px;
