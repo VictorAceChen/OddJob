@@ -24,6 +24,7 @@ job2 = Job.create(
 	salary:	900000,
   location: "Queens",
 	description: "We have a part-time opening for a Cleaning Professionals - Part-Time. Must be able to work various shifts per week. Be authorized to work in the United States.",
+
 	employer_id: vanessa.id
   )
 

@@ -10,10 +10,10 @@ class Job < ActiveRecord::Base
 	)
 
   def summary
-  if description.length <= 125
-    return description
-  else
-    return description.slice(0, 125) + "..."
+    if description.length <= 125
+      return description
+    else
+      return description.slice(0, 125) + "..."
+    end
   end
-end
 end

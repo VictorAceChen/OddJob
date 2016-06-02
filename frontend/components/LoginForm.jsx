@@ -71,6 +71,7 @@ var LoginForm = React.createClass({
     }
 
 
+
     var entryForm = (
         <form id="loginform" name="loginform" onSubmit={this.handleSubmit}>
           <div className="form_content">
@@ -105,10 +106,12 @@ var LoginForm = React.createClass({
                 </td>
                 <td id="col_b2" className="col">
                   <img src={window.placeholderGif}/>
+
                 </td>
               </tr>
             </tbody>
           </table>
+
         <div className="separator_bottom separator">&nbsp;</div>
     </div>
 
