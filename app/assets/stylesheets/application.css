@@ -15,23 +15,59 @@
  *= require_self
  */
 
- .separator_top {
-     border-top: 1px solid #36c;
-     background: #e0e5ff;
-     margin-bottom: 1em;
-     color: #808080;
-     font-weight: bold;
- }
+.separator_top {
+   border-top: 1px solid #36c;
+   background: #e0e5ff;
+   margin-bottom: 1em;
+   color: #808080;
+   font-weight: bold;
+}
 
- .separator_bottom {
-     border-bottom: 1px solid #36c;
-     background: #e0e5ff;
-     margin-top: 1em;
- }
+.separator_bottom {
+   border-bottom: 1px solid #36c;
+   background: #e0e5ff;
+   margin-top: 1em;
+}
 
- #main_logo {
-   display: block; 
-   max-height:95px;
-   width: auto;
-   height: auto;
- }
+#g_nav {
+   border-bottom: 1px solid #ccc;
+   margin-bottom: 9px;
+}
+
+.navBi {
+   display: -moz-inline-box;
+   display: inline-block;
+   padding: 9px 12px;
+   margin: 0;
+   list-style-type: none;
+}
+
+#userOptions {
+  z-index: 2;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  padding: 9px 15px;
+  border: 1px solid #ccc;
+  background: #fff;
+  min-width: 150px;
+  text-align: left;
+}
+
+#userOptionsLabel {
+  cursor: pointer;
+}
+
+#u_nav{
+  margin-right: auto;
+  position:relative;
+  display: inline-block;
+  float:right;
+}
+
+#main_logo {
+ display: block;
+ max-height:95px;
+ width: auto;
+ height: auto;
+}

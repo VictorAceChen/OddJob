@@ -91,3 +91,9 @@ label {
     padding: 0 1em;
     font-size: 16px;
 }
+
+#col_b2 {
+  display:block;
+  padding-left:40px;
+  padding-top: 30px;
+}
