@@ -2,7 +2,7 @@
 
 [Heroku link][heroku] **NB:** This should be a link to your production site
 
-[heroku]: oddjobappacademy.herokuapp.com
+[heroku]: https://oddjobappacademy.herokuapp.com
 
 ## Minimum Viable Product
 OddJob is a web application inspired by Indeed that will be build using Ruby on Rails and React.js.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria:

@@ -17,14 +17,14 @@ ActiveRecord::Schema.define(version: 20160601202106) do
   enable_extension "plpgsql"
 
   create_table "jobs", force: :cascade do |t|
-    t.integer  "employer_id", null: false
-    t.string   "title",       null: false
-    t.string   "description", null: false
-    t.string   "jobtype"
-    t.string   "location",    null: false
+    t.integer  "employer_id",                       null: false
+    t.string   "title",                             null: false
+    t.string   "description",                       null: false
+    t.string   "jobtype",     default: "Part-Time"
+    t.string   "location",                          null: false
     t.integer  "salary"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
   add_index "jobs", ["employer_id"], name: "index_jobs_on_employer_id", using: :btree

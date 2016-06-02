@@ -34,7 +34,7 @@ var App = React.createClass({
     return (
       <div>
         <header>
-          <h1>OddJob</h1>
+          <img id="main_logo" src={window.logoImage}/>
           { this.greeting() }
         </header>
         {this.props.children}

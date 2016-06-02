@@ -69,7 +69,7 @@ var LoginForm = React.createClass({
       navLink = <Link to="/login" activeClassName="current">Sign In</Link>;
       greeting = "Already have an account? ";
     }
- 
+
 
     var entryForm = (
         <form id="loginform" name="loginform" onSubmit={this.handleSubmit}>
@@ -95,7 +95,6 @@ var LoginForm = React.createClass({
 		return (
       <div>
         <div className="separator_top separator">&nbsp;</div>
-        <body>
           <table id="signin_task_2col" align="center">
             <tbody>
               <tr>
@@ -105,12 +104,11 @@ var LoginForm = React.createClass({
                   {entryForm}
                 </td>
                 <td id="col_b2" className="col">
-                  <img src={window.placeholderUrl}/>
+                  <img src={window.placeholderGif}/>
                 </td>
               </tr>
             </tbody>
           </table>
-        </body>
         <div className="separator_bottom separator">&nbsp;</div>
     </div>
 

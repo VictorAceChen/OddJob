@@ -2,7 +2,6 @@ class Api::JobsController < ApplicationController
 	before_action :require_signed_in!, only: [:create]
 	def index
 		@jobs = Job.all
-    render :index
 	end
 
 	def show
@@ -10,19 +9,42 @@ class Api::JobsController < ApplicationController
 	end
 
 	def create
-		city = params.require(:job)[:location]
-		location = Location.find_or_create_by(city: city)
+    @job = Job.create!(job_params)
 
-		@job = location.jobs.new(job_params)
-		@job.employer_id = current_user.id
     if @job.save
+      # render json: @job
       render :show
     else
-      render json: {message: @job.errors.full_messages }, status: 401
+      render json: @job.errors.full_messages, status: 422
     end
 	end
 
+  def update
+    @job = Job.find(params[:id])
+
+    if @job.update(job_params)
+      render :show
+    else
+      render json: @job.errors.full_messages, status: 422
+    end
+  end
+
+  def destroy
+    @job = Job.find(params[:id])
+
+    if @job.destroy
+      render :show
+    else
+      render json: @job.errors.full_messages, status: 422
+    end
+  end
+
   def job_params
-    params.require(:job).permit(:title, :jobtype, :salary, :description, :location)
+    params.require(:job).permit(
+    :title,
+    :jobtype,
+    :salary,
+    :description,
+    :location)
   end
 end
