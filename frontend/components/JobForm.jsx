@@ -5,13 +5,16 @@ var LinkedStateMixin = require('react-addons-linked-state-mixin');
 
 var ClientActions = require('../actions/client_actions.js');
 
+var ReactQuill = require('react-quill');
+var NoteToolbar = require('./QuillToolbar');
+
 var JobForm = React.createClass({
   mixins: [LinkedStateMixin],
 
   getInitialState: function () {
     return ({ company: "", title: "", body: "" });
   },
-  
+
   handleSubmit: function (event) {
     event.preventDefault();
     var jobData = {
@@ -23,6 +26,14 @@ var JobForm = React.createClass({
   },
 
   render: function () {
+    var company = <input
+      id="company"
+      name="company"
+      type="text"
+      maxLength="200"
+      placeholder=""
+      valueLink={this.linkState("company")}/>;
+
     return (
       <div>
         <div id="page-header">
@@ -34,13 +45,7 @@ var JobForm = React.createClass({
 
             <label htmlFor="company">Company</label>
             <br/>
-            <input
-              id="company"
-              name="company"
-              type="text"
-              maxLength="200"
-              placeholder=""
-              valueLink={this.linkState("company")}/>
+            {company}
             <br/>
             <label htmlFor="jobTitle">Job Title</label>
             <br/>
@@ -52,7 +57,9 @@ var JobForm = React.createClass({
               placeholder=""
               valueLink={this.linkState("title")}/>
             <br />
+            <label htmlFor="description">Job Description</label>
 
+            <ReactQuill value={this.state.value} />
             <textarea
               value={this.state.body}
               onChange={this.bodyChange} />

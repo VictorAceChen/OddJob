@@ -29,7 +29,7 @@ var style = {
 
 var NavBar = React.createClass({
   getInitialState: function(){
-    return {showUserOptions: false, modalOpen: false};
+    return {showUserOptions: false, modalOpen: true};
   },
 
   closeModal: function(){
