@@ -1,0 +1,19 @@
+#page-header {
+    border-bottom: 2px solid #9cf;
+    margin-bottom: 10px;
+}
+
+#page-header #page-title {
+    float: left;
+    font-size: 22px;
+}
+
+.form-content {
+    max-width: 600px;
+}
+
+div#form-content label {
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 1px;
+}

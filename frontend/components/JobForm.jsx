@@ -1,21 +1,17 @@
 var React = require('react');
+
+var Link = require('react-router').Link;
+var LinkedStateMixin = require('react-addons-linked-state-mixin');
+
 var ClientActions = require('../actions/client_actions.js');
 
-module.exports = React.createClass({
+var JobForm = React.createClass({
+  mixins: [LinkedStateMixin],
+
   getInitialState: function () {
-    return ({ title: "", body: "" });
+    return ({ company: "", title: "", body: "" });
   },
-
-  titleChange: function (event) {
-    var newTitle = event.target.value;
-    this.setState({ title: newTitle });
-  },
-
-  bodyChange: function (event) {
-    var newBody = event.target.value;
-    this.setState({ body: newBody });
-  },
-
+  
   handleSubmit: function (event) {
     event.preventDefault();
     var jobData = {
@@ -29,24 +25,46 @@ module.exports = React.createClass({
   render: function () {
     return (
       <div>
-        <h3>Post a Job</h3>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            value={this.state.title}
-            onChange={this.titleChange} />
+        <div id="page-header">
+          <h id="page-title">Post a Job</h>
+          <div className="clear"/>
+        </div>
+        <div id="form-content">
+          <form onSubmit={this.handleSubmit}>
 
-          <br /><br />
+            <label htmlFor="company">Company</label>
+            <br/>
+            <input
+              id="company"
+              name="company"
+              type="text"
+              maxLength="200"
+              placeholder=""
+              valueLink={this.linkState("company")}/>
+            <br/>
+            <label htmlFor="jobTitle">Job Title</label>
+            <br/>
+            <input
+              id="jobTitle"
+              name="company"
+              type="text"
+              maxLength="200"
+              placeholder=""
+              valueLink={this.linkState("title")}/>
+            <br />
 
-          <textarea
-            value={this.state.body}
-            onChange={this.bodyChange} />
+            <textarea
+              value={this.state.body}
+              onChange={this.bodyChange} />
 
-          <br /><br />
+            <br /><br />
 
-          <input type="submit" value="Create Job" />
-        </form>
+            <input type="submit" value="Create Job" />
+          </form>
+        </div>
       </div>
     );
   }
 });
+
+module.exports = JobForm;

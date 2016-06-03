@@ -14,13 +14,18 @@
  *= require_tree .
  *= require_self
  */
+// #main_page {
+//   background: url("WorldDomination");
+//   background-repeat: no-repeat;
+//   background-attachment: fixed;
+//   background-position: center;
+// }
 
 .separator_top {
    border-top: 1px solid #36c;
    background: #e0e5ff;
    margin-bottom: 1em;
    color: #808080;
-   font-weight: bold;
 }
 
 .separator_bottom {
@@ -32,8 +37,6 @@
 #g_nav {
    border-bottom: 1px solid #ccc;
    margin-bottom: 9px;
-   background: 	#1668F1;
-   color: white;
 }
 
 .navBi {
@@ -44,6 +47,13 @@
    list-style-type: none;
    outline: none;
    cursor: pointer;
+   color: #4869EF; 
+}
+
+.navBi:hover{
+  background: 	#84BDF8;
+  color: white;
+  font-weight: bold;
 }
 
 #userOptions {
@@ -79,4 +89,8 @@
  max-height:95px;
  width: auto;
  height: auto;
+}
+
+div.clear {
+    clear: both;
 }

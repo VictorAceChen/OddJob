@@ -15,7 +15,7 @@ var App = React.createClass({
 
   render: function() {
     return (
-      <div>
+      <div id="main_page">
         <NavBar pathname={this.props.location.pathname}/>
         <a href="/">
           <img id="main_logo" src={window.logoImage}/>

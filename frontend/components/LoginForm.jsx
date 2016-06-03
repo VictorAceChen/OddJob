@@ -1,6 +1,8 @@
 var React = require('react');
+
 var Link = require('react-router').Link;
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
+
 var SessionApiUtil = require('./../util/session_api_util');
 var SessionStore = require('./../stores/session_store');
 var ErrorStore = require('./../stores/error_store');
@@ -69,8 +71,6 @@ var LoginForm = React.createClass({
       navLink = <Link to="/login" activeClassName="current">Sign In</Link>;
       greeting = "Already have an account? ";
     }
-
-
 
     var entryForm = (
         <form id="loginform" name="loginform" onSubmit={this.handleSubmit}>
