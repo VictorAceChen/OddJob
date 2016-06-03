@@ -29,7 +29,7 @@ module.exports = React.createClass({
   render: function () {
     return (
       <div>
-        <h3>New Job</h3>
+        <h3>Post a Job</h3>
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"

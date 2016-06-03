@@ -32,6 +32,8 @@
 #g_nav {
    border-bottom: 1px solid #ccc;
    margin-bottom: 9px;
+   background: 	#1668F1;
+   color: white;
 }
 
 .navBi {
@@ -41,6 +43,7 @@
    margin: 0;
    list-style-type: none;
    outline: none;
+   cursor: pointer;
 }
 
 #userOptions {
@@ -56,7 +59,12 @@
 }
 
 #userOptionsLabel {
-  cursor: pointer;
+}
+
+.userNameRepeat{
+  color: #a8a8a8;
+  padding-right: 48px;
+  font-weight: bold;
 }
 
 #u_nav{
