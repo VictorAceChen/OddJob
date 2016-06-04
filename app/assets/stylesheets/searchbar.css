@@ -1,0 +1,120 @@
+#main_logo{
+  float: left;
+  width: auto;
+  height: auto;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.input {
+  float: left;
+}
+.search-form input_text{
+  font-size: 18px;
+  padding: 17px 5px;
+}
+
+.search-form input{
+  box-sizing: border-box;
+  margin: 0;
+  height: 30px;
+  font-family: Arial,sans-serif;
+  border: 1px solid #ccc;
+  border-bottom-color: #aaa;
+  border-right-color: #aaa;
+  -webkit-border-radius: 0;
+  -webkit-appearance: none;
+}
+
+.search_text_label {
+  color: #f60;
+  text-transform: lowercase;
+  font-weight: bold;
+}
+
+.search_descrip_label {
+  font-size: 12px;
+  color: #aaaaaa;
+}
+
+.what-input {
+  width: 295px;
+}
+
+.where-input {
+  width: 265px;
+}
+
+.find-button {
+  text-align: center;
+  margin: 0;
+  height: 25px;
+  width: 83.05px;
+  font-family: Arial;
+  font-size: 15px;
+  color: #fff;
+  background: #3366cc;
+  border: 1px solid #6699ff;
+  border-style: outset;
+  padding: 4px 9px;
+  cursor: pointer;
+  display: block;
+
+}
+
+.inwrapBorderTop {
+    border-top: 1px solid #69F;
+    display: inline-block;
+    background-color: #3163f2;
+    background: -webkit-gradient(linear,left top,left bottom,from(#3163f2),to(#2b57d5));
+}
+
+.find-button:hover {
+  background: #4477ff;
+}
+
+.search-bar input {
+  border: 1px solid #cccccc;
+  box-shadow: 1px 1px #aaaaaa;
+  height: 26px;
+  color: black;
+  font-size: 18px;
+  padding: 2px 6px;
+}
+
+.rcontent {
+  width: 950px;
+  margin: 15px auto;
+}
+
+.content .logo, .rcontent .rlogo {
+  display: block;
+  float: left;
+  font-size: 40px;
+  text-align: center;
+  width: 200px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.rcontent .rlogo span {
+  position: absolute;
+  font-size: 18px;
+  font-weight: normal;
+  color: #ff6d0d;
+  display: block;
+  left: 36px;
+  bottom: -8px;
+}
+
+.content .search_text_label, .rcontent .search_text_label {
+  font-size: 14px;
+}
+
+.content .find-button, .rcontent .find-button {
+  margin-top: 0;
+}
+
+.content .search-bar, .rcontent .search-bar {
+  margin-bottom: 20px;
+}

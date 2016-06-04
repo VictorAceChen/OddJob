@@ -3,7 +3,7 @@ var JobStore = require('../stores/job_store.js');
 var ClientActions = require('../actions/client_actions.js');
 
 var JobIndexItem = require('./jobIndexItem.jsx');
-var JobForm = require('./jobForm.jsx');
+var JobForm = require('./JobForm.jsx');
 
 module.exports = React.createClass({
   getInitialState: function () {

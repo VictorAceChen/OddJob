@@ -1,6 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var NavBar = require('./NavBar');
+var SearchBar = require('./SearchBar');
 
 var JobForm = require('./JobForm');
 
@@ -17,9 +18,7 @@ var App = React.createClass({
     return (
       <div id="main_page">
         <NavBar pathname={this.props.location.pathname}/>
-        <a href="/">
-          <img id="main_logo" src={window.logoImage}/>
-        </a>
+        <SearchBar/>
         {this.props.children}
       </div>
     );

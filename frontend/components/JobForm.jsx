@@ -26,6 +26,8 @@ var JobForm = React.createClass({
   },
 
   render: function () {
+    var toolbar = <NoteToolbar/>;
+
     var company = <input
       id="company"
       name="company"
@@ -33,6 +35,14 @@ var JobForm = React.createClass({
       maxLength="200"
       placeholder=""
       valueLink={this.linkState("company")}/>;
+
+    var jobTitle= <input
+      id="jobTitle"
+      name="jobTitle"
+      type="text"
+      maxLength="200"
+      placeholder=""
+      valueLink={this.linkState("title")}/>;
 
     return (
       <div>
@@ -49,13 +59,7 @@ var JobForm = React.createClass({
             <br/>
             <label htmlFor="jobTitle">Job Title</label>
             <br/>
-            <input
-              id="jobTitle"
-              name="company"
-              type="text"
-              maxLength="200"
-              placeholder=""
-              valueLink={this.linkState("title")}/>
+            {jobTitle}
             <br />
             <label htmlFor="description">Job Description</label>
 
