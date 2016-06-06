@@ -10,6 +10,11 @@ var JobForm = require('./JobForm');
 
 var SearchBar = React.createClass({
 
+  handleSubmit: function(event){
+    event.preventDefault();
+    hashHistory.push("jobs/" );
+  },
+
   render: function() {
 
     return (
@@ -19,7 +24,7 @@ var SearchBar = React.createClass({
         <img id="main_logo" src={window.logoImage}/>
       </a>
 
-      <form className="search-form">
+      <form className="search-form" onSubmit={this.handleSubmit}>
         <div className="input">
           <label className="search_text_label">what:</label>
           <br/>

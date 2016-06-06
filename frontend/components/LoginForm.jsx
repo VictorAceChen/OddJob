@@ -11,6 +11,10 @@ var UserApiUtil = require('./../util/user_api_util');
 var LoginForm = React.createClass({
 	mixins: [LinkedStateMixin],
 
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
+
   getInitialState: function () {
     return {
       username: "",
@@ -18,17 +22,34 @@ var LoginForm = React.createClass({
     };
   },
 
-  contextTypes: {
-    router: React.PropTypes.object.isRequired
+  onErrorChange: function () {
+    this.setState(
+      { password: "" }
+    );
+  },
+
+  fieldErrors: function (field) {
+    var errors = ErrorStore.formErrors(this.formType());
+    if (!errors[field]) { return; }
+
+    var messages = errors[field].map(function (errorMsg, i) {
+      return <li key={ i }>{ errorMsg }</li>;
+    });
+
+    return <ul className="control_error">{ messages }</ul>;
+  },
+
+  formType: function () {
+    return this.props.location.pathname.slice(1);
   },
 
   componentDidMount: function () {
-    // this.errorListener = ErrorStore.addListener(this.forceUpdate.bind(this));
+    this.errorListener = ErrorStore.addListener(this.onErrorChange);
     this.sessionListener = SessionStore.addListener(this.redirectIfLoggedIn);
   },
 
   componentWillUnmount: function () {
-    // this.errorListener.remove();
+    this.errorListener.remove();
     this.sessionListener.remove();
   },
 
@@ -53,9 +74,9 @@ var LoginForm = React.createClass({
     }
 	},
 
-
-  formType: function () {
-    return this.props.location.pathname.slice(1);
+  handleGuestSubmit: function(e) {
+    e.preventDefault();
+    SessionApiUtil.login({ username: "guest", password: "password" });
   },
 
 	render: function () {
@@ -63,11 +84,11 @@ var LoginForm = React.createClass({
     var navLink;
     var greeting;
     if (this.formType() === "login") {
-      formTitle = "Create An Account";
+      formTitle = "Sign In";
       navLink = <Link to="/signup" activeClassName="current">Create an account free</Link>;
       greeting = "Not a member? ";
     } else {
-      formTitle = "Sign In";
+      formTitle = "Create An Account";
       navLink = <Link to="/login" activeClassName="current">Sign In</Link>;
       greeting = "Already have an account? ";
     }
@@ -76,19 +97,24 @@ var LoginForm = React.createClass({
         <form id="loginform" name="loginform" onSubmit={this.handleSubmit}>
           <div className="form_content">
 
-            <label htmlFor="signin_email" className="input_label">Username:</label>
+            <label htmlFor="signin_username" className="input_label">Username:</label>
+            { this.fieldErrors("username") }
               <input type="text"
-                id="signin_email"
+                id="signin_username"
                 className="line_item input_text"
                 valueLink={this.linkState("username")} />
               <br/>
+
             <label htmlFor="signin_password" className="input_label">Password:</label>
+            { this.fieldErrors("password") }
               <input type="password"
                 id="signin_password"
                 className="line_item input_password"
                 valueLink={this.linkState("password")} />
 
             <input type="submit" value="Submit" className="input_submit button blueButton"/>
+
+            { this.fieldErrors("base") }
           </div>
         </form>
     );
@@ -100,6 +126,9 @@ var LoginForm = React.createClass({
             <tbody>
               <tr>
                 <td id="col_a2" className="col">
+                <button
+                  className="input_guest button blueButton"
+                  onClick={this.handleGuestSubmit}>Guest</button>
                   <h1>{ formTitle }</h1>
                   <p className="sign_up_prompt">{ greeting }{ navLink }</p>
                   {entryForm}

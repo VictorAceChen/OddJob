@@ -97,3 +97,7 @@ label {
   padding-left:40px;
   padding-top: 30px;
 }
+
+.input_guest {
+  float: right;
+}

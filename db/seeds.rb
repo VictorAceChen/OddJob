@@ -1,4 +1,5 @@
 User.destroy_all
+guest = User.create(username: "guest", password: "password")
 victor = User.create(username: "Victor", password: "password")
 vincent = User.create(username: "Vincent", password: "password")
 vanessa = User.create(username: "Vanessa", password: "password")

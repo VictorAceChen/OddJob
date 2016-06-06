@@ -10,6 +10,7 @@ var hashHistory = ReactRouter.hashHistory;
 
 //Components
 var App = require('./components/App');
+var FrontPage = require('./components/FrontPage');
 var JobIndex = require('./components/JobIndex.jsx');
 var LoginForm = require('./components/LoginForm');
 
@@ -20,8 +21,8 @@ var SessionApiUtil = require('./util/session_api_util');
 var Router = (
   <Router history={ hashHistory }>
     <Route path="/" component={ App }>
-    <IndexRoute component={JobIndex} />
-    <Route path="jobs" component={JobIndex} />
+    <IndexRoute component={ FrontPage } />
+    <Route path="/jobs" component={JobIndex} />
     <Route path="/login" component={ LoginForm } />
     <Route path="/signup" component={ LoginForm } />
     </Route>

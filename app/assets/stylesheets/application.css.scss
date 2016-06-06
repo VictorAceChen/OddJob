@@ -47,7 +47,7 @@
    list-style-type: none;
    outline: none;
    cursor: pointer;
-   color: #4869EF; 
+   color: #4869EF;
 }
 
 .navBi:hover{
@@ -92,5 +92,14 @@
 }
 
 div.clear {
+    display: block;
     clear: both;
+}
+
+.control_error{
+  visibility: visible;
+  opacity: 1;
+  color: #c00;
+  font-weight: 700;
+  font-size: 15px;
 }

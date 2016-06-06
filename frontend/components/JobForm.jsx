@@ -5,7 +5,7 @@ var LinkedStateMixin = require('react-addons-linked-state-mixin');
 
 var ClientActions = require('../actions/client_actions.js');
 
-var ReactQuill = require('react-quill');
+// var ReactQuill = require('react-quill');
 var NoteToolbar = require('./QuillToolbar');
 
 var JobForm = React.createClass({
@@ -44,6 +44,7 @@ var JobForm = React.createClass({
       placeholder=""
       valueLink={this.linkState("title")}/>;
 
+                  // <ReactQuill value={this.state.value} />
     return (
       <div>
         <div id="page-header">
@@ -63,7 +64,6 @@ var JobForm = React.createClass({
             <br />
             <label htmlFor="description">Job Description</label>
 
-            <ReactQuill value={this.state.value} />
             <textarea
               value={this.state.body}
               onChange={this.bodyChange} />

@@ -31,7 +31,7 @@ ErrorStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case ErrorConstants.SET_ERRORS:
       _errors = payload.errors;
-      _form = payload.type;
+      _form = payload.form;
       ErrorStore.__emitChange();
       break;
     case ErrorConstants.CLEAR_ERRORS:

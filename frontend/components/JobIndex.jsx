@@ -4,6 +4,7 @@ var ClientActions = require('../actions/client_actions.js');
 
 var JobIndexItem = require('./jobIndexItem.jsx');
 var JobForm = require('./JobForm.jsx');
+var SearchBar = require('./SearchBar');
 
 module.exports = React.createClass({
   getInitialState: function () {
@@ -27,6 +28,7 @@ module.exports = React.createClass({
     return (
 
       <div className="job-index">
+      <SearchBar/>
         <table cellPadding="0" cellSpacing="0" border="0" width="100%">
         <tbody>
           <tr>
