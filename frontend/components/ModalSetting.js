@@ -10,9 +10,9 @@ var style = {
   content : {
     position        : 'fixed',
     top             : '100px',
-    left            : '150px',
-    right           : '150px',
-    bottom          : '100px',
+    left            : '500px',
+    right           : '450px',
+    bottom          : '250px',
     border          : '1px solid #ccc',
     padding         : '20px'
   }

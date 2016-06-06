@@ -41,6 +41,9 @@ module.exports = React.createClass({
                 }
               </ul>
             </td>
+            <td className="auxCol group">
+              <img src={window.sideAd}/>
+            </td>
           </tr>
         </tbody>
         </table>

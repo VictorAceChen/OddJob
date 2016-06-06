@@ -104,7 +104,7 @@ var NavBar = React.createClass({
           isOpen={this.state.formOpen}
           onRequestClose={this.closeModal}>
           <JobForm/>
-        </Modal> 
+        </Modal>
 
       </div>
     );

@@ -12,14 +12,16 @@
   max-width: 600px;
 }
 
-div#form-content label {
+#form-content label {
   font-size: 13px;
   font-weight: bold;
-  margin-bottom: 1px;
+  margin-bottom: 3px;
+  margin-top: 10px;
 }
 
 #form-content input[type=text]{
   width: 300px;
+      padding: 6px 6px;
 }
 
 #form-content input{
@@ -31,4 +33,16 @@ div#form-content label {
   font-size: 13px;
   color: #999;
   padding: 3px 0px;
+}
+
+.description_tip {
+  margin-top: -2px;
+  font-size: 13px;
+  color: #999;
+}
+
+#form-content form textarea {
+  width: 600px;
+  height: 200px;
+  resize: vertical;
 }

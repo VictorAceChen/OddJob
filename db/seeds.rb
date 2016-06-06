@@ -8,32 +8,37 @@ victoria = User.create(username: "Victoria", password: "password")
 valentino = User.create(username: "Valentino", password: "password")
 vlad = User.create(username: "Vlad", password: "password")
 vladimir = User.create(username: "Vladimir", password: "password")
+tyrell = User.create(username: "Tyrell", password: "password")
+monarch = User.create(username: "Monarch", password: "password")
+gustavo = User.create(username: "Gustavo", password: "password")
 
 Job.destroy_all
 job1 = Job.create(
-	title: "Dishwasher",
-	jobtype: "Part-Time",
-	salary:	99999,
-  location: "Brooklyn",
-	description: "Responsible for maintaining the kitchen and dining areas in a clean and orderly condition. Washes, cleans, sanitizes and stores all dishes, glassware, utensils, pots, pans, and other equipment used to operate the kitchen and dining room areas. Cleans floors, equipment and other areas as assigned.",
-  employer_id: valentino.id
+	title: "Senior VP of Technology",
+	jobtype: "full-time",
+	salary:	999999,
+  location: "Worldwide",
+	description: "E Corp, known to Elliot by the derogatory name Evil Corp, is one of the largest multi-national conglomerates in the world. Among their enterprises, they manufacture computers, phones, and tablets, and maintain a banking and consumer credit division. According to Mr. Robot, the company owns 70% of the global consumer credit industry, which is why fsociety has targeted them, and why Mr. Robot recruited Elliot to help them hack into their network.",
+  employer_id: tyrell.id,
+  logo_url: "https://m.popkey.co/452923/4M5rR.gif"
 	)
 
 job2 = Job.create(
-	title: "Cleaning Professionals",
-	jobtype:	"Part-Time",
-	salary:	900000,
-  location: "Queens",
-	description: "We have a part-time opening for a Cleaning Professionals - Part-Time. Must be able to work various shifts per week. Be authorized to work in the United States.",
-
-	employer_id: vanessa.id
-  )
+	title: "Chef",
+	jobtype: "part-time",
+	salary:	50000000,
+  location: "12000 – 12100 Coors Rd SW, Albuquerque NM, 87045",
+	description: "The finest ingredients are brought together with love and care, then slow cooked to perfection. Yes, the old ways are still best at Los Pollos Hermanos. But don't take my word for it. One taste, and you'll know.",
+  employer_id: gustavo.id,
+  logo_url: "http://vignette2.wikia.nocookie.net/breakingbad/images/5/5c/Los_Pollos.png/revision/latest?cb=20130713042010"
+	)
 
 job3 = Job.create(
-	title: "Tutors",
-	jobtype:	"Part-Time",
-	salary:	25000,
-  location: "Bronx",
-	description: "We are looking for candidates that are as passionate about the growth and development of the precious children in our care as we are. keywords: teacher,teaching, preschool teacher, infant teacher, toddler teacher, two'steacher, pre-k teacher, prekindergarten teacher, early childhood teacher, earlychildhood educator, early childhood education, child development, child developmentassociate, daycare teacher, day care teacher, childcare teacher, child careteacher, full time teacher, part time teacher, experienced teacher, training",
-	employer_id: victor.id
-  )
+	title: "Henchman",
+	jobtype: "intern",
+	salary:	0,
+  location: "Floating Cocoon",
+	description: "The Fluttering Horde are supporting characters of the Adult Swim program The Venture Bros. The Horde are the henchmen of The Monarch and Dr. Mrs. The Monarch and were created when The Monarch first began arching Doctor Venture.\nThe Horde is made up of many henchmen, in particular recurring characters like 21 and 24. The Horde wear identical yellow butterfly-like suits, and aside from #21, #24, #1, #86, #87 and, a wingless recruit in the first episode named Speedy, are virtually indistinguishable.",
+  employer_id: monarch.id,
+  logo_url: "https://img1.etsystatic.com/013/0/7192588/il_fullxfull.435146537_ogcl.jpg"
+	)

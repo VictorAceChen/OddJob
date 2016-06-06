@@ -12,7 +12,7 @@ var JobForm = React.createClass({
   mixins: [LinkedStateMixin],
 
   getInitialState: function () {
-    return ({ company: "", title: "", body: "" });
+    return ({ company: "", title: "", body: "", salary: null });
   },
 
   handleSubmit: function (event) {
@@ -22,7 +22,7 @@ var JobForm = React.createClass({
       body: this.state.body
     };
     ClientActions.createJob(jobData);
-    this.setState({ title: "", body: "" });
+    this.setState({ company: "", title: "", body: "", salary: null });
   },
 
   render: function () {
@@ -36,7 +36,7 @@ var JobForm = React.createClass({
       placeholder=""
       valueLink={this.linkState("company")}/>;
 
-    var jobTitle= <input
+    var jobTitle = <input
       id="jobTitle"
       name="jobTitle"
       type="text"
@@ -44,6 +44,13 @@ var JobForm = React.createClass({
       placeholder=""
       valueLink={this.linkState("title")}/>;
 
+    var salary = <input
+      id="salary"
+      name="salary"
+      type="text"
+      type="number" min="0" step="1"
+      placeholder=""
+      valueLink={this.linkState("salary")}/>;
                   // <ReactQuill value={this.state.value} />
     return (
       <div>
@@ -61,16 +68,21 @@ var JobForm = React.createClass({
             <label htmlFor="jobTitle">Job Title</label>
             <br/>
             {jobTitle}
-            <br />
+            <br/>
             <label htmlFor="description">Job Description</label>
-
+            <br/>
+            <div  className="description_tip">
+              Describe the responsibilities of this job, required work experience, skills, or education.</div>
             <textarea
               value={this.state.body}
               onChange={this.bodyChange} />
-
+            <br/>
+            <label htmlFor="salary">Salary (optional)</label>
+            <br/>
+            $&nbsp;{salary}
             <br /><br />
 
-            <input type="submit" value="Create Job" />
+            <input className="blueButton" type="submit" value="Create Job" />
           </form>
         </div>
       </div>

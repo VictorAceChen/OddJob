@@ -5,4 +5,5 @@ json.extract! job,
 :salary,
 :description,
 :location,
-:summary
+:summary,
+:logo_url

@@ -18,10 +18,10 @@ module.exports = React.createClass({
 
   render: function () {
     var job = this.props.job;
-
     return (
-      <li>
-        <div className="row  result" id={this.props.job.id}>
+      <li className="row group">
+      <img src={this.props.job.logo_url} className="index_logo"/>
+        <div className="result" id={this.props.job.id}>
           <Link
             to={"/jobs/" + this.props.job.id.toString()}
             className="jobtitle"
