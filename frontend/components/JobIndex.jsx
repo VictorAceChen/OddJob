@@ -2,7 +2,7 @@ var React = require('react');
 var JobStore = require('../stores/job_store.js');
 var ClientActions = require('../actions/client_actions.js');
 
-var JobIndexItem = require('./jobIndexItem.jsx');
+var JobIndexItem = require('./JobIndexItem.jsx');
 var JobForm = require('./JobForm.jsx');
 var SearchBar = require('./SearchBar');
 
