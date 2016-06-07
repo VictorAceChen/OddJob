@@ -1,3 +1,9 @@
+.search-form{
+  display: block;
+  margin: 0 auto;
+  /*background-color:red;*/
+}
+
 #main_logo{
   float: left;
   width: auto;

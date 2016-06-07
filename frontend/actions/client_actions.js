@@ -1,4 +1,6 @@
+var AppDispatcher = require('../dispatcher/dispatcher.js');
 var ApiUtil = require('../util/job_api_util.js');
+var JobConstants = require('../constants/job_constants.js');
 
 module.exports = {
   fetchJobs: function () {

@@ -1,1 +1,1 @@
-json.partial! 'job', post: @job
+json.partial! 'job', job: @job

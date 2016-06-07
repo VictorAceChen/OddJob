@@ -14,11 +14,17 @@ module.exports = {
     });
   },
 
-  getJob: function (id) {
+  getJob: function (id) { 
     $.ajax({
       url: "api/jobs/" + id.toString(),
       success: function (job) {
         ServerActions.receiveJob(job);
+      },
+      error: function (xhr) {
+        console.log("error getting jobs");
+        // var errors = xhr.responseJSON;
+        // console.log(xhr);
+        // console.log(xhr.responseText);
       }
     });
   },
@@ -29,14 +35,11 @@ module.exports = {
       type: "POST",
       data: { job: data },
       success: function (job) {
-        ServerActions.receiveJob(job);
+        ServerActions.createJob(job);
         travelTo(job.id);
       },
       error: function (xhr) {
         console.log("error creating jobs");
-        var errors = xhr.responseJSON;
-        console.log(xhr);
-        console.log(xhr.responseText);
       }
     });
   },

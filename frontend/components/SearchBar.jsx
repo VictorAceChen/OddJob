@@ -18,7 +18,7 @@ var SearchBar = React.createClass({
   render: function() {
 
     return (
-      <div id="search_bar">
+      <div id="search_bar" className="group">
 
       <a href="/">
         <img id="main_logo" src={window.logoImage}/>

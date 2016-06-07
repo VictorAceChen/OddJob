@@ -38,6 +38,7 @@ var JobForm = React.createClass({
 
   goToJob: function(jobID) {
     hashHistory.push("/jobs/"+ jobID);
+    this.props.closeModal();
   },
 
   handleSubmit: function(e){
@@ -66,6 +67,7 @@ var JobForm = React.createClass({
     this.setState({ error: errors });
     if (errors.length === 0){
       JobApiUtil.createJob(jobObject, this.goToJob);
+
     }
   },
 

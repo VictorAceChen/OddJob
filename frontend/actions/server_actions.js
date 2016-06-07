@@ -16,6 +16,13 @@ module.exports = {
     });
   },
 
+  createJob: function (job) {
+    AppDispatcher.dispatch({
+      actionType: JobConstants.JOB_RECEIVED,
+      job: job
+    });
+  },
+
   removeJob: function (job) {
     AppDispatcher.dispatch({
       actionType: JobConstants.JOB_REMOVED,
