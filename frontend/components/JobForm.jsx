@@ -21,15 +21,20 @@ var JobForm = React.createClass({
     return ({ company: "", title: "", location: "", description: "", salary: null, error: [] });
   },
 
-  // textInput: function(item) {
-  //   return <input
-  //     id={item}
-  //     name={item}
-  //     type="text"
-  //     maxLength="200"
-  //     placeholder=""
-  //     valueLink={this.linkState({item})}/>;
-  // },
+  textInput: function(item, display) {
+    return (
+      <label>{display}
+        <br/>
+        <input
+        id={item}
+        name={item}
+        type="text"
+        maxLength="200"
+        placeholder=""
+        valueLink={this.linkState(item)}/>
+      </label>
+    );
+  },
 
   goToJob: function(jobID) {
     hashHistory.push("/jobs/"+ jobID);
@@ -65,34 +70,9 @@ var JobForm = React.createClass({
   },
 
   render: function () {
-    var error = error ? error : this.state.error.join();
+    var error = error ? error : this.state.error.join(", ");
 
     var toolbar = <NoteToolbar/>;
-
-
-    var company = <input
-      id="company"
-      name="company"
-      type="text"
-      maxLength="200"
-      placeholder=""
-      valueLink={this.linkState("company")}/>;
-
-    var jobTitle = <input
-      id="jobTitle"
-      name="jobTitle"
-      type="text"
-      maxLength="200"
-      placeholder=""
-      valueLink={this.linkState("title")}/>;
-
-    var location = <input
-      id="location"
-      name="location"
-      type="text"
-      maxLength="200"
-      placeholder=""
-      valueLink={this.linkState("location")}/>;
 
     var salary = <input
       id="salary"
@@ -110,18 +90,11 @@ var JobForm = React.createClass({
         </div>
         <div id="form-content">
           <form onSubmit={this.handleSubmit}>
-
-            <label htmlFor="company">Company</label>
+            {this.textInput("company","Company")}
             <br/>
-            {company}
+            {this.textInput("title","Job Title")}
             <br/>
-            <label htmlFor="jobTitle">Job Title</label>
-            <br/>
-            {jobTitle}
-            <br/>
-            <label htmlFor="location">Location</label>
-            <br/>
-            {location}
+            {this.textInput("location","Location")}
             <br/>
             <label htmlFor="description">Job Description</label>
             <br/>
