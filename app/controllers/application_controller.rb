@@ -1,6 +1,4 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
   def current_user
@@ -16,13 +14,16 @@ class ApplicationController < ActionController::Base
     current_user.reset_session_token!
     @current_user = nil
   end
-  
+
   def signed_in?
     !!current_user
   end
 
-  def require_signin
-	  redirect_to new_session_url if !signed_in?
+  def require_signed_in!
+	  # redirect_to new_session_url if !signed_in?
+    unless signed_in?
+      render json: "You most be logged in to see this page", status: 401
+    end
 	end
 
 end

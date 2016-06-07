@@ -10,9 +10,6 @@ module.exports = {
       error: function (xhr) {
         console.log("error fetching jobs");
         var errors = xhr.responseJSON;
-        console.log(xhr);
-        console.log(xhr.responseText);
-        console.log(errors);
       }
     });
   },
@@ -26,13 +23,20 @@ module.exports = {
     });
   },
 
-  createJob: function (data) {
+  createJob: function (data, travelTo) {
     $.ajax({
       url: "api/jobs",
       type: "POST",
       data: { job: data },
       success: function (job) {
         ServerActions.receiveJob(job);
+        travelTo(job.id);
+      },
+      error: function (xhr) {
+        console.log("error creating jobs");
+        var errors = xhr.responseJSON;
+        console.log(xhr);
+        console.log(xhr.responseText);
       }
     });
   },

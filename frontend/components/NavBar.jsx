@@ -11,15 +11,19 @@ var JobForm = require('./JobForm');
 
 var NavBar = React.createClass({
   getInitialState: function(){
-    return {showUserOptions: false, formOpen: false, loginOpen: false};
+    return {showUserOptions: false, jobFormOpen: false, loginOpen: false};
   },
 
   closeModal: function(){
-    this.setState({ formOpen: false });
+    this.setState({ jobFormOpen: false });
   },
 
-  openModal: function(){
-    this.setState({ formOpen: true, showUserOptions: false });
+  postJob: function(){
+    if (SessionStore.isUserLoggedIn()){
+      this.setState({ jobFormOpen: true, showUserOptions: false });
+    } else {
+      hashHistory.push("/login");
+    }
   },
 
   onClickUserNav: function() {
@@ -68,16 +72,16 @@ var NavBar = React.createClass({
 
   render: function() {
 
+    // <span className="navBi">
+    //   <a href="/resumes" id="rezLink">Find Resumes</a>
+    // </span>
     var public_nav = (
       <div id="p_nav">
         <span className="navBi">
           <a href="/" title="Jobs" id="jobsLink" className="selected">Find Jobs</a>
         </span>
         <span className="navBi">
-          <a href="/resumes" id="rezLink">Find Resumes</a>
-        </span>
-        <span className="navBi">
-          <strong onClick={this.openModal} id="empLink">Employers / Post Job</strong>
+          <strong onClick={this.postJob} id="empLink">Employers / Post Job</strong>
         </span>
       </div>
     );
@@ -101,7 +105,7 @@ var NavBar = React.createClass({
 
         <Modal
           style ={style}
-          isOpen={this.state.formOpen}
+          isOpen={this.state.jobFormOpen}
           onRequestClose={this.closeModal}>
           <JobForm/>
         </Modal>

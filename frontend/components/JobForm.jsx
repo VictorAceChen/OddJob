@@ -1,32 +1,74 @@
 var React = require('react');
+var JobApiUtil = require('../util/job_api_util');
+var hashHistory = require('react-router').hashHistory;
 
 var Link = require('react-router').Link;
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 
 var ClientActions = require('../actions/client_actions.js');
 
+var JobStore = require("../stores/job_store");
+
 // var ReactQuill = require('react-quill');
 var NoteToolbar = require('./QuillToolbar');
 
 var JobForm = React.createClass({
+
   mixins: [LinkedStateMixin],
 
+
   getInitialState: function () {
-    return ({ company: "", title: "", body: "", salary: null });
+    return ({ company: "", title: "", location: "", description: "", salary: null, error: [] });
   },
 
-  handleSubmit: function (event) {
-    event.preventDefault();
-    var jobData = {
+  // textInput: function(item) {
+  //   return <input
+  //     id={item}
+  //     name={item}
+  //     type="text"
+  //     maxLength="200"
+  //     placeholder=""
+  //     valueLink={this.linkState({item})}/>;
+  // },
+
+  goToJob: function(jobID) {
+    hashHistory.push("/jobs/"+ jobID);
+  },
+
+  handleSubmit: function(e){
+    e.preventDefault();
+    var router = this.context.router;
+    var jobObject = {
       title: this.state.title,
-      body: this.state.body
+      salary: this.state.salary,
+      description: this.state.description,
+      location: this.state.location
     };
-    ClientActions.createJob(jobData);
-    this.setState({ company: "", title: "", body: "", salary: null });
+
+    var errors = [];
+    if (this.state.title === ""){
+      errors.push("Title cannot be blank");
+    }
+    if (this.state.salary === ""){
+      errors.push("Salary cannot be blank");
+    }
+    if (this.state.description === ""){
+      errors.push("Description cannot be blank");
+    }
+    if (this.state.location === ""){
+      errors.push("location cannot be blank");
+    }
+    this.setState({ error: errors });
+    if (errors.length === 0){
+      JobApiUtil.createJob(jobObject, this.goToJob);
+    }
   },
 
   render: function () {
+    var error = error ? error : this.state.error.join();
+
     var toolbar = <NoteToolbar/>;
+
 
     var company = <input
       id="company"
@@ -43,6 +85,14 @@ var JobForm = React.createClass({
       maxLength="200"
       placeholder=""
       valueLink={this.linkState("title")}/>;
+
+    var location = <input
+      id="location"
+      name="location"
+      type="text"
+      maxLength="200"
+      placeholder=""
+      valueLink={this.linkState("location")}/>;
 
     var salary = <input
       id="salary"
@@ -69,20 +119,23 @@ var JobForm = React.createClass({
             <br/>
             {jobTitle}
             <br/>
+            <label htmlFor="location">Location</label>
+            <br/>
+            {location}
+            <br/>
             <label htmlFor="description">Job Description</label>
             <br/>
             <div  className="description_tip">
               Describe the responsibilities of this job, required work experience, skills, or education.</div>
             <textarea
-              value={this.state.body}
-              onChange={this.bodyChange} />
+              valueLink={this.linkState("description")}/>
             <br/>
             <label htmlFor="salary">Salary (optional)</label>
             <br/>
             $&nbsp;{salary}
+            <div className="control_error">{error}</div>
             <br /><br />
-
-            <input className="blueButton" type="submit" value="Create Job" />
+            <input type="submit" value="Create Job" className="blueButton" />
           </form>
         </div>
       </div>

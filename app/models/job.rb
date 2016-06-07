@@ -16,4 +16,9 @@ class Job < ActiveRecord::Base
       return description.slice(0, 125) + "..."
     end
   end
+
+  def logo_url
+    self.employer.logo_url
+  end
+
 end

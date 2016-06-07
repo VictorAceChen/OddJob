@@ -1,5 +1,6 @@
 class Api::JobsController < ApplicationController
-	before_action :require_signed_in!, only: [:create]
+	before_action :require_signed_in!, only: [:create, :destroy]
+
 	def index
 		@jobs = Job.all
 	end
@@ -9,11 +10,15 @@ class Api::JobsController < ApplicationController
 	end
 
 	def create
-    @job = Job.create!(job_params)
+    #Using association by user.job_posts.new()
+    # auto fills fk parameter, instead of the following
+    # @job = Job.new(job_params)
+    # @job.employer_id = current_user.id
 
+    @job = current_user.job_posts.new(job_params)
     if @job.save
-      # render json: @job
-      render :show
+      render json: @job
+      # render :show
     else
       render json: @job.errors.full_messages, status: 422
     end

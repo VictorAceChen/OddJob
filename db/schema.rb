@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160606182702) do
+ActiveRecord::Schema.define(version: 20160607122630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20160606182702) do
     t.integer  "salary"
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
-    t.string   "logo_url"
   end
 
   add_index "jobs", ["employer_id"], name: "index_jobs_on_employer_id", using: :btree
@@ -35,12 +34,13 @@ ActiveRecord::Schema.define(version: 20160606182702) do
   add_index "jobs", ["title"], name: "index_jobs_on_title", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",        null: false
+    t.string   "username",                                                                                                                               null: false
     t.string   "company_name"
-    t.string   "password_digest", null: false
-    t.string   "session_token",   null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "password_digest",                                                                                                                        null: false
+    t.string   "session_token",                                                                                                                          null: false
+    t.datetime "created_at",                                                                                                                             null: false
+    t.datetime "updated_at",                                                                                                                             null: false
+    t.string   "logo_url",        default: "http://www.villagehatshop.com/photos/product/standard/2393460S1799/derby-bowler-hats/harker-bowler-hat.jpg"
   end
 
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree

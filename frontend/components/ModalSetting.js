@@ -12,7 +12,7 @@ var style = {
     top             : '100px',
     left            : '500px',
     right           : '450px',
-    bottom          : '250px',
+    bottom          : '50px',
     border          : '1px solid #ccc',
     padding         : '20px'
   }
