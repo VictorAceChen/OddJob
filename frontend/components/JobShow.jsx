@@ -16,7 +16,7 @@ var job = React.createClass({
 
   componentDidMount: function () {
     this.jobListener = JobStore.addListener(this.getJob);
-    ClientActions.getJob(this.state.jobId); //sets this.state.job
+    ClientActions.getJob(this.state.jobId); //sets state.job
   },
 
 

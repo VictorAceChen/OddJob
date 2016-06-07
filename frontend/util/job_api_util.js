@@ -14,7 +14,7 @@ module.exports = {
     });
   },
 
-  getJob: function (id) { 
+  getJob: function (id) {
     $.ajax({
       url: "api/jobs/" + id.toString(),
       success: function (job) {
