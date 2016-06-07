@@ -23,12 +23,15 @@ var job = React.createClass({
 
   render: function () {
     return (
-      <div>
-        <ul>
-          <li>Description: {this.state.job.description}</li>
-        </ul>
-        <br/>
-      </div>
+      <table id="job-content" cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+          <tr valign="top">
+            <td style="padding:20px;padding-left:23px;">
+              Description: {this.state.job.description}
+            </td>
+          </tr>
+        </tbody>
+      </table> 
     );
   }
 });

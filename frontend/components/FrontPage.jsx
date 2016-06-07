@@ -21,8 +21,8 @@ function rotate() {
   }
   var el = document.getElementById("adBanner");
   //  debugger
-  if(!el) el.src = adImages[theAd];
-  $(el).fadeIn("slow");
+  el.src = adImages[theAd];
+  // $(el).fadeIn("slow");
   // $(el).fadeToggle()("slow");
 
   setTimeout(rotate, adImages.length * 2000);
