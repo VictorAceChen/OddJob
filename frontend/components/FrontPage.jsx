@@ -1,7 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var JobStore = require('../stores/job_store');
-var JobSearch = require('./SearchBar'); 
+var JobSearch = require('./SearchBar');
 
 // window.onload = rotate;
 
@@ -35,11 +35,7 @@ var FrontPage = React.createClass({
   getInitialState: function() {
     return {
       theAd: 0,
-      adImages: new Array(
-        "https://66.media.tumblr.com/tumblr_maegvjEMZ21r18azjo1_500.gif",
-        "https://66.media.tumblr.com/08648f5e116800625ce267a076730517/tumblr_o0g0ynlHaj1sa11jco1_540.gif",
-        "https://media0.giphy.com/media/EOpZ7XsVfTN2E/200.gif"
-      )
+      adImages: adImages
     };
   },
 

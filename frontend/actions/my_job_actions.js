@@ -2,7 +2,7 @@ var AppDispatcher = require('../dispatcher/dispatcher.js');
 var MyJobConstants = require('../constants/myjob_constants.js');
 
 module.exports = {
-  receiveAll: function (myjobs) {
+  receiveAllMyJobs: function (myjobs) {
     AppDispatcher.dispatch({
       actionType: MyJobConstants.MYJOBS_RECEIVED,
       myjobs: myjobs

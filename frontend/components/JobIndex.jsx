@@ -8,7 +8,7 @@ var SearchBar = require('./SearchBar');
 
 var rotateImages = require('./rotateImages.js');
 
-window.onload = rotate;
+// window.onload = rotate;
 var theAd = 0;
 var adImages = new Array(
   "http://data.whicdn.com/images/45940825/large.png",
@@ -42,6 +42,7 @@ module.exports = React.createClass({
   componentDidMount: function () {
     this.jobListener = JobStore.addListener(this.getJobs);
     ClientActions.fetchJobs();
+    rotate();
   },
 
   componentWillUnmount: function () {
@@ -70,7 +71,7 @@ module.exports = React.createClass({
               </ul>
             </td>
             <td className="auxCol group">
-              <img id="sideBanner" src=""/>
+              <img id="sideBanner" src={adImages[0]}/>
             </td>
           </tr>
         </tbody>
