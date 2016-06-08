@@ -36,7 +36,7 @@ var FrontPage = React.createClass({
     return (
       <div className="centered">
         <JobSearch/>
-        <img src={adImages[1]} id="adBanner" alt="Ad Banner" className="fade-in"/>
+        <img src={adImages[0]} id="adBanner" alt="Ad Banner" className="fade-in"/>
       </div>
     );
   }

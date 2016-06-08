@@ -42,7 +42,9 @@ module.exports = React.createClass({
               </ul>
             </td>
             <td className="auxCol group">
-              <img src={window.sideAd}/>
+              <img src="http://data.whicdn.com/images/45940825/large.png"/>
+              <img src="https://s-media-cache-ak0.pinimg.com/736x/93/09/f2/9309f2ced4bc22920e5af967bf87fb10.jpg"/>
+              <img src="http://static6.comicvine.com/uploads/scale_small/7/71975/2357182-240041_20120317132130_large.jpg"/>
             </td>
           </tr>
         </tbody>

@@ -79,7 +79,6 @@ var JobForm = React.createClass({
     var salary = <input
       id="salary"
       name="salary"
-      type="text"
       type="number" min="0" step="1"
       placeholder=""
       valueLink={this.linkState("salary")}/>;
