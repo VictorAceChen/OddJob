@@ -16,6 +16,7 @@ var App = React.createClass({
 
   render: function() {
     return (
+
       <div id="main_page">
         <NavBar pathname={this.props.location.pathname}/>
         {this.props.children}

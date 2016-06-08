@@ -17,7 +17,6 @@ var MyJobIndex = React.createClass({
   },
 
   componentDidMount: function () {
-    this.checkEntry();
     this.myJobListener = MyJobStore.addListener(this.getMyJobs);
     // debugger
     MyJobClientActions.fetchMyJobs();
@@ -27,11 +26,6 @@ var MyJobIndex = React.createClass({
     this.myJobListener.remove();
   },
 
-  checkEntry: function(){
-    if (!SessionStore.isUserLoggedIn()){
-      hashHistory.push("/login");
-    }
-  },
 
   render: function() {
 

@@ -24,7 +24,7 @@ var Router = (
     <Route path="/" component={ App }>
     <IndexRoute component={ FrontPage } />
     <Route path="/jobs" component={ JobIndex } />
-    <Route path="/my_jobs" component={ MyJobIndex } />
+    <Route path="/my_jobs" component={ MyJobIndex } onEnter={_ensureLoggedIn} />
     <Route path="/login" component={ LoginForm } />
     <Route path="/signup" component={ LoginForm } />
     <Route path="jobs/:jobId" component={ JobShow }/>

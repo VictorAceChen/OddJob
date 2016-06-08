@@ -123,8 +123,10 @@ label {
   line-height: normal;
   padding: 8px 16px;
   position: relative;
+
+  text-decoration: line-through;
 }
 
 .oddjob{
   padding-top: 35px;
-} 
+}

@@ -31,6 +31,10 @@ var NavBar = React.createClass({
       this.setState({ showUserOptions: this.state.showUserOptions ? false : true });
   },
 
+  closeUserOptions: function(){
+    this.setState({ showUserOptions: false });
+  },
+
   componentDidMount: function () {
     SessionApiUtil.fetchCurrentUser();
     SessionStore.addListener(this.forceUpdate.bind(this));
@@ -41,7 +45,7 @@ var NavBar = React.createClass({
     var userOptions = (
       <div id="userOptions">
         <div className="userOptionItem">
-          <Link to={"/my_jobs/"}>My Jobs</Link>
+          <Link to={"/my_jobs/"} onClick={this.closeUserOptions}>My Jobs</Link>
         </div>
         <div className="userOptionItem">
           <div className="userNameRepeat">{SessionStore.currentUser().username}</div>

@@ -18,4 +18,6 @@
   color: #FFFFFF;
   float: left;
   background-image: -webkit-linear-gradient(top, #FF6600, #F14200) !important;
+
+  text-decoration: line-through;
 }
