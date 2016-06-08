@@ -1,0 +1,7 @@
+var MyJobConstants = {
+  MYJOBS_RECEIVED: "MYJOBS_RECEIVED",
+  MYJOB_RECEIVED: "MYJOB_RECEIVED",
+  MYJOB_REMOVED: "MYJOB_REMOVED"
+};
+
+module.exports = MyJobConstants;

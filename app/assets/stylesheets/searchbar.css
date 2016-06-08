@@ -68,11 +68,12 @@
 
 }
 
-.inwrapBorderTop {
+.find-button-container {
     border-top: 1px solid #69F;
     display: inline-block;
     background-color: #3163f2;
     background: -webkit-gradient(linear,left top,left bottom,from(#3163f2),to(#2b57d5));
+    margin: 15px;
 }
 
 .find-button:hover {
@@ -123,4 +124,8 @@
 
 .content .search-bar, .rcontent .search-bar {
   margin-bottom: 20px;
+}
+
+.input_guest {
+  float: left;
 }

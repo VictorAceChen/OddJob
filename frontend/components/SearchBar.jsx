@@ -39,7 +39,7 @@ var SearchBar = React.createClass({
           <br/>
           <label className="search_descrip_label">city, state, or zip</label>
         </div>
-        <span className="inwrapBorderTop">
+        <span className="find-button-container">
           <input className="find-button" type="submit" value="Find Jobs"/>
         </span>
       </form>

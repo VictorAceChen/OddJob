@@ -23,7 +23,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 - [X] Create an account (MVP)
 - [X] Log in / Log out, including as a Guest/Demo User (MVP)
-- [ ] Create, read, edit, and delete jobs (MVP)
+- [ ] Create, read, edit, and (delete) jobs (MVP)
 - [ ] Organize jobs within JobTypes (MVP)
 - [ ] Tag jobs with multiple tags (expected feature, but not MVP)
 - [ ] Apply complex styling to jobs while editing (expected feature, but not MVP)
@@ -113,14 +113,14 @@ which has its own `Index` view.
   - [ ] search job listing by tag
 - [ ] Style new elements
 
-### Phase 7: Watchlist (1 day)
+### Phase 7: myJob (1 day)
 
-**objective:** Users can add job to watchlist.
+**objective:** Users can add job to myJob.
 
-- [ ] create Watchlist model
+- [ ] create myJob model
 - build out API, Flux loop, and components for:
-  - [ ] add/remove jobs from watchlist
-  - [ ] update watchlist item status
+  - [ ] add/remove jobs from myJob
+  - [ ] update myJob item status
 
 ### Phase 8: Styling Cleanup and Seeding (1 day)
 

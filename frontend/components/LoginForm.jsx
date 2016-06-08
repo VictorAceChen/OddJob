@@ -126,16 +126,19 @@ var LoginForm = React.createClass({
             <tbody>
               <tr>
                 <td id="col_a2" className="col">
-                <button
-                  className="input_guest button blueButton"
-                  onClick={this.handleGuestSubmit}>Guest</button>
                   <h1>{ formTitle }</h1>
                   <p className="sign_up_prompt">{ greeting }{ navLink }</p>
                   {entryForm}
                 </td>
                 <td id="col_b2" className="col">
-                  <img src={window.placeholderGif}/>
-
+                <button
+                  className="input_guest button blueButton"
+                  onClick={this.handleGuestSubmit}>Guest Sign in
+                </button>
+                <button
+                  className="twitter_button"
+                  href="/auth/twitter">Sign in with Twitter
+                </button>
                 </td>
               </tr>
             </tbody>

@@ -6,6 +6,34 @@ var JobIndexItem = require('./JobIndexItem.jsx');
 var JobForm = require('./JobForm.jsx');
 var SearchBar = require('./SearchBar');
 
+var rotateImages = require('./rotateImages.js');
+
+window.onload = rotate;
+var theAd = 0;
+var adImages = new Array(
+  "http://data.whicdn.com/images/45940825/large.png",
+  "https://s-media-cache-ak0.pinimg.com/736x/93/09/f2/9309f2ced4bc22920e5af967bf87fb10.jpg",
+  "http://static6.comicvine.com/uploads/scale_small/7/71975/2357182-240041_20120317132130_large.jpg"
+);
+
+//referenced from
+//http://www.peachpit.com/articles/article.aspx?p=2239154&seqNum=7
+function rotate() {
+  theAd++;
+  if (theAd == adImages.length) {
+    theAd = 0;
+  }
+  var el = document.getElementById("sideBanner");
+  el.src = adImages[theAd];
+
+  $(el).fadeIn("slow");
+
+  // var fadeOut = function(){ $(el).fadeOut("slow");};
+  setTimeout(function(){  $(el).fadeOut("slow"); }, 5500);
+
+  setTimeout(rotate, 6000);
+}
+
 module.exports = React.createClass({
   getInitialState: function () {
     return { jobs: [] };
@@ -42,9 +70,7 @@ module.exports = React.createClass({
               </ul>
             </td>
             <td className="auxCol group">
-              <img src="http://data.whicdn.com/images/45940825/large.png"/>
-              <img src="https://s-media-cache-ak0.pinimg.com/736x/93/09/f2/9309f2ced4bc22920e5af967bf87fb10.jpg"/>
-              <img src="http://static6.comicvine.com/uploads/scale_small/7/71975/2357182-240041_20120317132130_large.jpg"/>
+              <img id="sideBanner" src=""/>
             </td>
           </tr>
         </tbody>
