@@ -41,7 +41,7 @@ var NavBar = React.createClass({
     var userOptions = (
       <div id="userOptions">
         <div className="userOptionItem">
-          <a href="http://www.indeed.com/my/myjobs?from=desktopnavmenu">My Jobs</a>
+          <Link to={"/my_jobs/"}>My Jobs</Link>
         </div>
         <div className="userOptionItem">
           <div className="userNameRepeat">{SessionStore.currentUser().username}</div>

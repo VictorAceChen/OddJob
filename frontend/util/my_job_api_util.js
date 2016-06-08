@@ -1,22 +1,24 @@
-var ServerActions = require('../actions/my_job_actions.js');
+var ServerActions = require('../actions/myjob_server_actions.js');
 
 module.exports = {
   fetchMyJobs: function () {
     $.ajax({
-      url: "api/myjobs",
+      url: "api/my_jobs",
+
       success: function (myjobs) {
         ServerActions.receiveAll(myjobs);
       },
       error: function (xhr) {
         console.log("error fetching myjobs");
         var errors = xhr.responseJSON;
+        console.log(errors);
       }
     });
   },
 
   getMyJob: function (id) {
     $.ajax({
-      url: "api/mymyjobs/" + id.toString(),
+      url: "api/my_jobs/" + id.toString(),
       success: function (myjob) {
         ServerActions.receiveMyJob(myjob);
       },
@@ -28,7 +30,7 @@ module.exports = {
 
   createMyJob: function (data, travelTo) {
     $.ajax({
-      url: "api/myjobs",
+      url: "api/my_jobs",
       type: "POST",
       data: { job: data },
       success: function (myjob) {
@@ -43,7 +45,7 @@ module.exports = {
 
   updateMyJob: function (data) {
     $.ajax({
-      url: "api/myjobs/" + data.id,
+      url: "api/my_jobs/" + data.id,
       type: "PATCH",
       data: { job: { title: data.title, body: data.body } },
       success: function (myjob) {
@@ -54,7 +56,7 @@ module.exports = {
 
   deleteMyJob: function (id) {
     $.ajax({
-      url: "api/myjobs/" + id,
+      url: "api/my_jobs/" + id,
       type: "DELETE",
       success: function (myjob) {
         ServerActions.removeMyJob(myjob);

@@ -1,5 +1,9 @@
 json.extract! my_job,
 :id,
-:user_id,
-:job_id,
-:status
+:title,
+:jobtype,
+:salary,
+:description,
+:location,
+:summary,
+:logo_url

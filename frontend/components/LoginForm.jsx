@@ -55,7 +55,7 @@ var LoginForm = React.createClass({
 
   redirectIfLoggedIn: function () {
     if (SessionStore.isUserLoggedIn()) {
-      this.context.router.push("/");
+      this.context.router.goBack();
     }
   },
 

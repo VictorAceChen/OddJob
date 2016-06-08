@@ -16,6 +16,19 @@ class User < ActiveRecord::Base
     primary_key: :id
   )
 
+  has_many(
+    :my_jobs,
+    class_name: "MyJob",
+    foreign_key: :user_id,
+    primary_key: :id
+  )
+
+  has_many(
+    :jobs,
+    through: :my_jobs
+  )
+  # user.jobs.where(status: "Applying")
+
   def password=(password)
 		self.password_digest = BCrypt::Password.create(password)
 		@password = password

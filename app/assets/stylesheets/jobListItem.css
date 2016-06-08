@@ -8,6 +8,7 @@
 
 .result {
   float: left;
+  width: 333px;
 }
 
 a.jobtitle {
@@ -47,5 +48,9 @@ a.jobtitle {
   max-height:100%;
 }
 .summary {
-  width:  300px; 
+  width:  300px;
+}
+
+.removeButton {
+  float: right;
 }

@@ -1,6 +1,6 @@
 class Api::MyJobsController < ApplicationController
   def index
-    @my_jobs = MyJob.forseeker(params[:user_id])
+    @my_jobs = User.find(current_user.id).jobs
   end
 
   def create

@@ -8,9 +8,6 @@ var _myjobs = {};
 
 var resetMyJobs = function (myjobs) {
   _myjobs = {};
-
-  // if (myjobs === undefined) return;
-
   myjobs.forEach(function (myjob) {
     _myjobs[myjob.id] = myjob;
   });
@@ -40,7 +37,6 @@ MyJobStore.find = function (id) {
 
 
 MyJobStore.__onDispatch = function (payload) {
-
   switch (payload.actionType) {
     case MyJobConstants.MYJOBS_RECEIVED:
       resetMyJobs(payload.myjobs);
