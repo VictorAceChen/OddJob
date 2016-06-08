@@ -40,7 +40,8 @@ a.jobtitle {
 .auxCol {
   width: 315px;
   position: fixed;
-  right: 10%;
+  right: 15%;
+  top: 25%;
 }
 
 .auxCol img{
