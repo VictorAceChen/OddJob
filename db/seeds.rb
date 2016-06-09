@@ -141,8 +141,8 @@ job10 = Job.create(
   )
 
 MyJob.destroy_all
-my_job1 = MyJob.create(user_id: guest.id,job_id: job1.id, status: "saved")
-my_job2 = MyJob.create(user_id: guest.id,job_id: job2.id, status: "saved")
+my_job1 = MyJob.create(user_id: guest.id,job_id: job1.id, status: "-")
+my_job2 = MyJob.create(user_id: guest.id,job_id: job2.id, status: "-")
 my_job3 = MyJob.create(user_id: guest.id,job_id: job3.id, status: "hired")
 my_job4 = MyJob.create(user_id: guest.id,job_id: job4.id, status: "applied")
 my_job5 = MyJob.create(user_id: guest.id,job_id: job5.id, status: "applied")

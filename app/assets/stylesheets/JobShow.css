@@ -1,6 +1,14 @@
-.showItem{
-  padding:20px;
-  padding-left:23px;
+.job_detail{
+  margin: 0 auto;
+  padding-left: 100px;
+}
+
+.detail_logo{
+  position: relative; width: 300px;
+}
+
+.job_info children{
+  padding: 20px;
 }
 
 .apply-button{
@@ -20,4 +28,8 @@
   background-image: -webkit-linear-gradient(top, #FF6600, #F14200) !important;
 
   text-decoration: line-through;
+}
+
+.job_summary {
+  width: 250px;
 }

@@ -40,7 +40,8 @@ var MyJobIndex = React.createClass({
               <ul>
                 {
                   this.state.myjobs.map(function (job) {
-                    return (<JobIndexItem key={job.id} job={job} showButton={true}/>);
+
+                    return (<JobIndexItem job={job} showButton={true}/>);
                   })
                 }
               </ul>

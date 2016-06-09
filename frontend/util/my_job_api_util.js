@@ -16,18 +16,6 @@ module.exports = {
     });
   },
 
-  getMyJob: function (id) {
-    $.ajax({
-      url: "api/my_jobs/" + id.toString(),
-      success: function (myjob) {
-        ServerActions.receiveMyJob(myjob);
-      },
-      error: function (xhr) {
-        console.log("error getting myjobs");
-      }
-    });
-  },
-
   createMyJob: function (data, travelTo) {
     $.ajax({
       url: "api/my_jobs",
@@ -45,7 +33,7 @@ module.exports = {
 
   updateMyJob: function (data) {
     $.ajax({
-      url: "api/my_jobs/" + data.id,
+      url: "api/my_jobs",
       type: "PATCH",
       data: { job: { title: data.title, body: data.body } },
       success: function (myjob) {
@@ -54,13 +42,13 @@ module.exports = {
     });
   },
 
-  deleteMyJob: function (jobid) {
+  deleteMyJob: function (job_id) {
     $.ajax({
-      url: "api/my_jobs/",
+      url: "api/my_jobs",
       type: "DELETE",
-      data: { jobid: jobid },
-      success: function (jobid) {
-        ServerActions.removeMyJob(jobid);
+      data: { job_id: job_id },
+      success: function (id) {
+        ServerActions.removeMyJob(id);
       }
     });
   }

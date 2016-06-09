@@ -3,6 +3,7 @@ var Link = require('react-router').Link;
 var Modal = require("react-modal");
 var SessionStore = require('../stores/session_store');
 var ClientActions = require('../actions/client_actions.js');
+var MyJobClientActions = require('../actions/myjob_client_actions.js');
 var JobStore = require('../stores/job_store');
 var JobApply = require('./JobApply');
 
@@ -16,7 +17,8 @@ var job = React.createClass({
     return {
       jobId: parseInt(this.props.params.jobId),
       job : {},
-      applyOpen: false
+      applyOpen: false,
+      current_user: SessionStore.currentUser().employer_id
     };
   },
 
@@ -29,6 +31,10 @@ var job = React.createClass({
     ClientActions.getJob(this.state.jobId); //sets state.job
   },
 
+  componentWillUnmount: function () {
+    this.jobListener.remove();
+  },
+
   openApply: function() {
     this.setState({applyOpen: true});
   },
@@ -37,19 +43,29 @@ var job = React.createClass({
     this.setState({applyOpen: false});
   },
 
-  showSaveButton: function() {
-    var Savebutton = null
-    if(SessionStore.currentUser().id !== this.state.job.employer_id){
-      Savebutton = <button className="button blueButton" onClick={this.openApply}>Save this job</button>;
-    }
-    return Savebutton;
+  addToMyJob: function() {
+    MyJobClientActions.createMyJob(this.state.job.id);
   },
 
   render: function () {
+
+    var apply_button = <button className="apply-button" onClick={this.openApply}>Apply Now</button>;
+    apply_button = null; //not ready
+
+    var follow_button
+    if (this.state.current_user !== this.state.job.employer_id) {
+      follow_button = <button className="button blueButton" onClick={this.openApply}>Save this job</button>;
+    }
+
+    var delete_button;
+    if (this.state.current_user === this.state.job.employer_id) {
+      delete_button = <button className="button blueButton" onClick={this.openApply}>Delete</button>;
+    }
+
     return (
-      <div>
-        <div id="job_header" data-tn-component="jobHeader">
-        <img src={this.state.job.logo_url} className="index_logo"/>
+      <div className="job_detail">
+      <img src={this.state.job.logo_url} className="detail_logo"/>
+        <div id="job_info" data-tn-component="jobHeader">
           <b className="jobtitle"><font size="+1">{this.state.job.title}</font></b>
           <br/>
           <span className="company">COMPANY NAME</span>
@@ -58,23 +74,21 @@ var job = React.createClass({
           <br/>
             Part-time,&nbsp;Temporary
             <br/>
-          <span id="job_summary" className="summary">
+          <p id="job_summary" className="summary">
             {this.state.job.description}
-          </span>
+          </p>
         </div>
-        <button className="apply-button" onClick={this.openApply}>Apply Now</button>
-        {this.showSaveButton}
-
-        <Modal
-          style ={style}
-          isOpen={this.state.applyOpen}
-          onRequestClose={this.closeModal}>
-          <JobApply job={this.job}/>
-        </Modal>
+        {follow_button}
+        {delete_button}
       </div>
 
     );
   }
 });
-
+// <Modal
+//   style ={style}
+//   isOpen={this.state.applyOpen}
+//   onRequestClose={this.closeModal}>
+//   <JobApply job={this.job}/>
+// </Modal>
 module.exports = job;
