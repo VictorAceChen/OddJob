@@ -12,6 +12,7 @@ var hashHistory = ReactRouter.hashHistory;
 var App = require('./components/App');
 var FrontPage = require('./components/FrontPage');
 var LoginForm = require('./components/LoginForm');
+var Account = require('./components/Account');
 var JobIndex = require('./components/JobIndex.jsx');
 var JobShow = require('./components/JobShow');
 var MyJobIndex = require('./components/MyJob/MyJobIndex');
@@ -26,6 +27,7 @@ var Router = (
     <Route path="/jobs" component={ JobIndex } />
     <Route path="/my_jobs" component={ MyJobIndex } onEnter={_ensureLoggedIn} />
     <Route path="/login" component={ LoginForm } />
+    <Route path="/account" component={ Account } />
     <Route path="/signup" component={ LoginForm } />
     <Route path="jobs/:jobId" component={ JobShow }/>
     </Route>

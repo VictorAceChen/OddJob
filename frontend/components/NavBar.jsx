@@ -45,6 +45,9 @@ var NavBar = React.createClass({
     var userOptions = (
       <div id="userOptions">
         <div className="userOptionItem">
+          <Link to={"/account/"} onClick={this.closeUserOptions}>Account</Link>
+        </div>
+        <div className="userOptionItem">
           <Link to={"/my_jobs/"} onClick={this.closeUserOptions}>My Jobs</Link>
         </div>
         <div className="userOptionItem">

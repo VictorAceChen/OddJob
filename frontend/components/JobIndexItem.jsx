@@ -10,6 +10,7 @@ module.exports = React.createClass({
   getInitialState: function() {
     return {deleted: false};
   },
+  
   editJob: function (event) {
     event.preventDefault();
     var url = "/jobs/" + this.props.job.id.toString() + "/edit";

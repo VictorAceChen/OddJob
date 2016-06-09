@@ -75,7 +75,7 @@ var job = React.createClass({
     }
 
     return (
-      <div className="job_detail"><p>hrsthdrthdrthrdthdrthdrth</p>
+      <div className="job_detail">
       <img src={this.state.job.logo_url} className="detail_logo"/>
         <div id="job_info" data-tn-component="jobHeader">
           <b className="jobtitle"><font size="+1">{this.state.job.title}</font></b>
