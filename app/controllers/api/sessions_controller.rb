@@ -61,8 +61,7 @@ class Api::SessionsController < ApplicationController
 
   def create_with_facebook
 		@user = User.find_or_create_with_auth_hash(auth_hash)
-		login(@user)
-    debugger
+		login(@user) 
 		redirect_to root_url + '#/'
 	end
 
