@@ -50,13 +50,10 @@ var job = React.createClass({
 
   addToMyJob: function() {
     MyJobClientActions.createMyJob(this.state.job.id);
+    hashHistory.push("/my_jobs/");
   },
 
   deleteJob: function() {
-    if(window.beingWatched(this.state.jobId)) {
-        window.alert("Job is being watched by others.");
-        return;
-    }
     ClientActions.deleteJob(this.state.job.id);
   },
 
@@ -68,7 +65,7 @@ var job = React.createClass({
 
     var follow_button
     if (this.state.current_user !== this.state.job.employer_id) {
-      follow_button = <button className="button blueButton" onClick={this.openApply}>Save this job</button>;
+      follow_button = <button className="button blueButton" onClick={this.addToMyJob}>Save this job</button>;
     }
 
     var delete_button;

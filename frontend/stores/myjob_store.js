@@ -8,7 +8,7 @@ var _myjobs = {};
 
 var resetMyJobs = function (myjobs) {
   _myjobs = {};
-  
+
   myjobs.forEach(function (myjob) {
     _myjobs[myjob.id] = myjob;
   });
@@ -51,5 +51,5 @@ MyJobStore.__onDispatch = function (payload) {
   }
   this.__emitChange();
 };
-
+window.MyJobStore = MyJobStore;
 module.exports = MyJobStore;

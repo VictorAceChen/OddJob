@@ -8,7 +8,7 @@ class Api::MyJobsController < ApplicationController
     # @my_job.user_id = current_user.id
     @my_job = current_user.my_jobs.new(my_job_params)
     if @my_job.save
-      render :show
+      render json: @job
     else
       render json: @my_job.errors.full_messages, status: 422
     end

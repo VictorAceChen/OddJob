@@ -35,6 +35,7 @@ class Api::JobsController < ApplicationController
   end
 
   def destroy
+
     @job = Job.find(params[:id])
 
     if @job.destroy
@@ -52,4 +53,5 @@ class Api::JobsController < ApplicationController
     :description,
     :location)
   end
+
 end

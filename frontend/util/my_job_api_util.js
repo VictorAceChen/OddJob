@@ -16,14 +16,20 @@ module.exports = {
     });
   },
 
-  createMyJob: function (data, travelTo) {
+  createMyJob: function (job_id) {
     $.ajax({
       url: "api/my_jobs",
       type: "POST",
-      data: { job: data },
+      data: {
+        my_job: {
+          job_id: job_id,
+          status: "-"
+        }
+      },
       success: function (myjob) {
+        // debugger
+        if(!myjob) return; //hacky need to fix
         ServerActions.createMyJob(myjob);
-        travelTo(job.id);
       },
       error: function (xhr) {
         console.log("error creating myjobs");

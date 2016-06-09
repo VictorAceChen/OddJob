@@ -29,7 +29,11 @@ module.exports = React.createClass({
 
   render: function () {
     if(this.state.deleted) return null;
+
     var job = this.props.job;
+    // debugger
+    if(!job) return(<div></div>);
+
     var button = this.props.showButton ? <button className="button blueButton removeButton" onClick={this.deleteMyJob}>Remove</button> : null;
     // var button;
 
@@ -43,6 +47,7 @@ module.exports = React.createClass({
     //         <option value="hired">hired</option>
     //         <option value="hired">remove</option>
     //       </select> : null;
+
 
     return (
       <div>
