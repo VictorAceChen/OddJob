@@ -84,7 +84,7 @@ var JobForm = React.createClass({
       valueLink={this.linkState("salary")}/>;
                   // <ReactQuill value={this.state.value} />
     return (
-      <div>
+      <div className="post_job_container">
         <div id="page-header">
           <h id="page-title">Post a Job</h>
           <div className="clear"/>

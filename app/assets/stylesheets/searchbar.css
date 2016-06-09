@@ -1,7 +1,11 @@
 .search-form{
-  display: block;
+  /*display: block;*/
   margin: 0 auto;
   /*background-color:red;*/
+  width: 700px;
+  height: auto;
+  padding: 10px;
+  position: relative;
 }
 
 #main_logo{

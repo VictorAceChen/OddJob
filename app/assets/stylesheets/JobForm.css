@@ -1,6 +1,14 @@
+.post_job_container{
+  margin: 0 auto;
+  height: auto;
+  padding-left: 50px;
+  position: relative;
+}
+
 #page-header {
   border-bottom: 2px solid #9cf;
   margin-bottom: 10px;
+  width: 500px;
 }
 
 #page-header #page-title {
@@ -20,8 +28,8 @@
 }
 
 #form-content input[type=text]{
-  width: 300px;
-      padding: 6px 6px;
+  width: 480px;
+  padding: 6px 6px;
 }
 
 #form-content input{
@@ -42,7 +50,7 @@
 }
 
 #form-content form textarea {
-  width: 600px;
+  width: 490px;
   height: 200px;
   resize: vertical;
 }
