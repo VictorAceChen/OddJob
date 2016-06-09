@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160608225848) do
+ActiveRecord::Schema.define(version: 20160609113113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20160608225848) do
   add_index "my_jobs", ["user_id"], name: "index_my_jobs_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",                                                                                                                               null: false
+    t.string   "username"
     t.string   "company_name"
     t.string   "password_digest"
     t.string   "session_token",                                                                                                                          null: false
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20160608225848) do
     t.datetime "updated_at",                                                                                                                             null: false
     t.string   "logo_url",        default: "http://www.villagehatshop.com/photos/product/standard/2393460S1799/derby-bowler-hats/harker-bowler-hat.jpg"
     t.string   "twitter_uid"
+    t.string   "facebook_uid"
   end
 
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree

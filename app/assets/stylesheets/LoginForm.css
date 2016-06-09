@@ -120,6 +120,27 @@ label {
   text-decoration: line-through;
 }
 
+.facebook_button{
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: 12px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  padding: 0 8px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid;
+  border-radius: 2px;
+  box-sizing: content-box;
+  background-color: #4267b2;
+  height: 40px;
+  border-radius: 4px;
+}
+
 .oddjob{
   padding-top: 35px;
 }

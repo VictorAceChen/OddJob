@@ -30,6 +30,7 @@ gem 'aws-sdk', '>= 2.0'
 
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -44,6 +45,8 @@ group :development, :test do
   gem 'byebug'
   gem 'binding_of_caller'
   gem 'pry-rails'
+  gem 'pry-rails'
+  gem 'annotate'
 end
 
 group :development do

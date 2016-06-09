@@ -59,7 +59,12 @@ class Api::SessionsController < ApplicationController
     end
   end
 
-  private
+  def create_with_facebook
+		@user = User.find_or_create_with_auth_hash(auth_hash)
+		login(@user)
+		redirect_to root_url
+	end
+   
 
   def auth_hash
     request.env['omniauth.auth']

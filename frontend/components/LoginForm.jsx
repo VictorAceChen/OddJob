@@ -135,7 +135,7 @@ var LoginForm = React.createClass({
                   className="input_guest button blueButton"
                   onClick={this.handleGuestSubmit}>Guest Sign in
                 </button>
-                <a href="/auth/twitter" className="twitter_button">Sign in with Twitter</a>
+                <a href="/auth/facebook"><button className="facebook_button" type="button">Sign In with Facebook</button></a>
                 </td>
               </tr>
             </tbody>
@@ -148,4 +148,5 @@ var LoginForm = React.createClass({
 	}
 });
 
+// <a href="/auth/twitter" className="twitter_button">Sign in with Twitter</a>
 module.exports = LoginForm;
