@@ -10,28 +10,24 @@ var UserApiUtil = require('./../util/user_api_util');
 window.SessionStore =SessionStore;
 var Account = React.createClass({
 
-  getInitialState: function () {
-    return { user: null };
-  },
 
 
-  componentDidMount: function () {
+  componentWillMount: function () {
     SessionApiUtil.fetchCurrentUser();
     SessionStore.addListener(this.forceUpdate.bind(this));
-    this.setState({user: SessionStore.currentUser()});
   },
 
 	render: function () {
-
-    if(!this.state.user) return(<div>Loading...</div>);
+    if(!SessionStore.currentUser().username) return(<div>Loading...</div>);
 		return (
       <div>
         <h1>Account</h1>
         <div className="separator_top separator">&nbsp;</div>
-        Username:
+        <p>Username:&nbsp;</p>{SessionStore.currentUser().username}
         <br/>
-        {this.state.username}
-        <br/>
+          <p>Current Logo:&nbsp;</p>
+            <br/>
+            <img src={SessionStore.currentUser().logo_url} className=""/>
         <div className="separator_bottom separator">&nbsp;</div>
     </div>
 
