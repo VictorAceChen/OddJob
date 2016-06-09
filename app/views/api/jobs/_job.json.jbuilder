@@ -6,4 +6,5 @@ json.extract! job,
 :description,
 :location,
 :summary,
+:employer_id,
 :logo_url

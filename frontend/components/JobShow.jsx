@@ -37,10 +37,19 @@ var job = React.createClass({
     this.setState({applyOpen: false});
   },
 
+  showSaveButton: function() {
+    var Savebutton = null
+    if(SessionStore.currentUser().id !== this.state.job.employer_id){
+      Savebutton = <button className="button blueButton" onClick={this.openApply}>Save this job</button>;
+    }
+    return Savebutton;
+  },
+
   render: function () {
     return (
       <div>
         <div id="job_header" data-tn-component="jobHeader">
+        <img src={this.state.job.logo_url} className="index_logo"/>
           <b className="jobtitle"><font size="+1">{this.state.job.title}</font></b>
           <br/>
           <span className="company">COMPANY NAME</span>
@@ -48,18 +57,20 @@ var job = React.createClass({
           <span className="location">{this.state.job.location}</span>
           <br/>
             Part-time,&nbsp;Temporary
+            <br/>
+          <span id="job_summary" className="summary">
+            {this.state.job.description}
+          </span>
         </div>
-        <span id="job_summary" className="summary">
-          {this.state.job.description}
-        </span>
         <button className="apply-button" onClick={this.openApply}>Apply Now</button>
+        {this.showSaveButton}
 
-          <Modal
-            style ={style}
-            isOpen={this.state.applyOpen}
-            onRequestClose={this.closeModal}>
-            <JobApply job={this.job}/>
-          </Modal>
+        <Modal
+          style ={style}
+          isOpen={this.state.applyOpen}
+          onRequestClose={this.closeModal}>
+          <JobApply job={this.job}/>
+        </Modal>
       </div>
 
     );

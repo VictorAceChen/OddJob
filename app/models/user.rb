@@ -40,25 +40,13 @@ class User < ActiveRecord::Base
 		user.password_is?(password) ? user : nil
 	end
 
-  # def self.find_or_create_by_auth_hash(auth_hash)
-  #   user = User.find_by(twitter_uid: auth_hash[:uid])
-  #
-  #   if user.nil?
-  #     user = User.create!(
-  #       twitter_uid: auth_hash[:uid],
-  #       name: auth_hash[:info][:name]
-  #     )
-  #   end
-  #
-  #   user
-  # end
-
   def self.find_or_create_with_auth_hash(auth_hash)
   user = User.find_by(facebook_uid: auth_hash[:uid])
   if user.nil?
-    user = User.create(
+    user = User.create!(
       facebook_uid: auth_hash[:uid],
-      username: auth_hash[:info][:name]
+      username: auth_hash[:info][:name],
+      password: SecureRandom::urlsafe_base64 #to pass password restriction
     )
   end
   user

@@ -1,10 +1,12 @@
 class Api::MyJobsController < ApplicationController
   def index
-    @my_jobs = User.find(current_user.id).jobs
+    @my_jobs = current_user.jobs
   end
 
   def create
-    @my_job = MyJob.new(my_job_params)
+    # @my_job = MyJob.new(my_job_params)
+    # @my_job.user_id = current_user.id
+    @my_job = current_user.my_jobs.new(my_job_params)
     if @my_job.save
       render :show
     else
@@ -23,12 +25,12 @@ class Api::MyJobsController < ApplicationController
   end
 
   def destroy
-    @my_job = MyJob.find(params[:id])
+    @my_job = current_user.my_jobs.find_by(job_id: params[:job_id])
     @my_job.destroy
     render :show
   end
 
   def my_job_params
-    params.require(:my_job).permit(:user_id, :job_id, :status)
+    params.require(:my_job).permit(:job_id, :status)
   end
 end

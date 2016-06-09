@@ -1,6 +1,7 @@
 var React = require('react');
 var Link = require('react-router').Link;
 var ClientActions = require('../actions/client_actions.js');
+var MyJobClientActions = require('../actions/myjob_client_actions.js');
 var hashHistory = require('react-router').hashHistory;
 
 module.exports = React.createClass({
@@ -16,9 +17,14 @@ module.exports = React.createClass({
     ClientActions.deleteJob(this.props.job.id);
   },
 
+  deleteMyJob: function (event) {
+    event.preventDefault();
+    MyJobClientActions.deleteMyJob(this.props.job.id);
+  },
+
   render: function () {
     var job = this.props.job;
-    var button = this.props.showButton ? <button className="button blueButton removeButton">Remove</button> : null;
+    var button = this.props.showButton ? <button className="button blueButton removeButton" onClick={this.deleteMyJob}>Remove</button> : null;
     return (
       <div>
 

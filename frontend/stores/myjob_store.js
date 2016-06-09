@@ -8,6 +8,7 @@ var _myjobs = {};
 
 var resetMyJobs = function (myjobs) {
   _myjobs = {};
+  
   myjobs.forEach(function (myjob) {
     _myjobs[myjob.id] = myjob;
   });

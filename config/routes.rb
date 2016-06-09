@@ -6,7 +6,8 @@ Rails.application.routes.draw do
     resource :user, only: [:create]
     resource :session, only: [:create, :destroy, :show]
     resources :jobs, only: [:index, :create, :edit, :show]
-    resources :my_jobs, only: [:index, :create, :edit, :show, :destroy]
+    resources :my_jobs, only: [:index, :create, :edit, :show]
+    delete '/my_jobs/', to: 'my_jobs#destroy'
 
   end
 

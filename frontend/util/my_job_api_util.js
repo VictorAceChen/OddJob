@@ -54,12 +54,13 @@ module.exports = {
     });
   },
 
-  deleteMyJob: function (id) {
+  deleteMyJob: function (jobid) {
     $.ajax({
-      url: "api/my_jobs/" + id,
+      url: "api/my_jobs/",
       type: "DELETE",
-      success: function (myjob) {
-        ServerActions.removeMyJob(myjob);
+      data: { jobid: jobid },
+      success: function (jobid) {
+        ServerActions.removeMyJob(jobid);
       }
     });
   }

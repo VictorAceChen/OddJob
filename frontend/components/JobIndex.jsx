@@ -24,7 +24,7 @@ function rotate() {
     theAd = 0;
   }
   var el = document.getElementById("sideBanner");
-  if(!el) return rotate(); //patchwork
+  if(!el) return; //patchwork
   el.src = adImages[theAd];
 
   $(el).fadeIn("slow");
