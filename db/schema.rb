@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20160608225848) do
     t.datetime "created_at",                                                                                                                             null: false
     t.datetime "updated_at",                                                                                                                             null: false
     t.string   "logo_url",        default: "http://www.villagehatshop.com/photos/product/standard/2393460S1799/derby-bowler-hats/harker-bowler-hat.jpg"
-    t.string   "twitter_id"
+    t.string   "twitter_uid"
   end
 
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
