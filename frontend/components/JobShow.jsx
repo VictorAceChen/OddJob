@@ -55,6 +55,7 @@ var job = React.createClass({
 
   deleteJob: function() {
     ClientActions.deleteJob(this.state.job.id);
+    hashHistory.push("/jobs/");
   },
 
   render: function () {

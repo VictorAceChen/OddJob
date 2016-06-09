@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(version: 20160609113113) do
   add_index "jobs", ["title"], name: "index_jobs_on_title", using: :btree
 
   create_table "my_jobs", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "job_id",  null: false
-    t.string  "status",  null: false
+    t.integer "user_id",               null: false
+    t.integer "job_id",                null: false
+    t.string  "status",  default: "-", null: false
   end
 
   add_index "my_jobs", ["job_id"], name: "index_my_jobs_on_job_id", using: :btree

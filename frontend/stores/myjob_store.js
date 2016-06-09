@@ -50,6 +50,5 @@ MyJobStore.__onDispatch = function (payload) {
       break;
   }
   this.__emitChange();
-};
-window.MyJobStore = MyJobStore;
+}; 
 module.exports = MyJobStore;

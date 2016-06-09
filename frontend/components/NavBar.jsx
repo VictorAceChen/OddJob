@@ -5,7 +5,7 @@ var SessionApiUtil = require('./../util/session_api_util');
 var hashHistory = require('react-router').hashHistory;
 
 var Modal = require("react-modal");
-var style = require('./ModalSetting');
+var style = require('./ModalSetting').post;
 var JobForm = require('./JobForm');
 
 

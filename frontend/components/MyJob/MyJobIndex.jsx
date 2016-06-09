@@ -29,11 +29,7 @@ var MyJobIndex = React.createClass({
 
   render: function() {
     if(this.state.myjobs.length === 0) return(null);
-    console.log(
 
-      this.state.myjobs.map(function(job){ return job; })
-
-    );
     // MyJobStore.all().map(function(job){return job.id})
 // debugger
     return (
