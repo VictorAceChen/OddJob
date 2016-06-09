@@ -18,17 +18,22 @@ var job = React.createClass({
       jobId: parseInt(this.props.params.jobId),
       job : {},
       applyOpen: false,
-      current_user: SessionStore.currentUser().employer_id
+      current_user: null
     };
   },
 
-  getJob: function () {
-    this.setState({ job: JobStore.find(this.state.jobId) });
+  getInfo: function () {
+    this.setState({ job: JobStore.find(this.state.jobId),
+      current_user: SessionStore.currentUser().id
+     });
+
   },
 
   componentDidMount: function () {
-    this.jobListener = JobStore.addListener(this.getJob);
+    this.jobListener = JobStore.addListener(this.getInfo);
     ClientActions.getJob(this.state.jobId); //sets state.job
+    SessionStore.currentUser();
+
   },
 
   componentWillUnmount: function () {
@@ -47,7 +52,16 @@ var job = React.createClass({
     MyJobClientActions.createMyJob(this.state.job.id);
   },
 
+  deleteJob: function() {
+    if(window.beingWatched(this.state.jobId)) {
+        window.alert("Job is being watched by others.");
+        return;
+    }
+    ClientActions.deleteJob(this.state.job.id);
+  },
+
   render: function () {
+    if(!this.state.job){return <div/> }; //stop initial rendering errors
 
     var apply_button = <button className="apply-button" onClick={this.openApply}>Apply Now</button>;
     apply_button = null; //not ready
@@ -59,7 +73,7 @@ var job = React.createClass({
 
     var delete_button;
     if (this.state.current_user === this.state.job.employer_id) {
-      delete_button = <button className="button blueButton" onClick={this.openApply}>Delete</button>;
+      delete_button = <button className="button blueButton" onClick={this.deleteJob}>Delete</button>;
     }
 
     return (

@@ -46,7 +46,7 @@ module.exports = {
 
   updateJob: function (data) {
     $.ajax({
-      url: "api/jobs/" + data.id,
+      url: "api/jobs/" + data.id.toString(),
       type: "PATCH",
       data: { job: { title: data.title, body: data.body } },
       success: function (job) {
@@ -57,7 +57,7 @@ module.exports = {
 
   deleteJob: function (id) {
     $.ajax({
-      url: "api/jobs/" + id,
+      url: "api/jobs/" + id.toString(),
       type: "DELETE",
       success: function (job) {
         ServerActions.removeJob(job);
