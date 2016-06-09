@@ -23,6 +23,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bcrypt'
 gem 'rails_12factor'
+
+gem "paperclip", '5.0.0.beta1'
+gem 'figaro'
+gem 'aws-sdk', '>= 2.0'
+
+gem 'omniauth'
+gem 'omniauth-twitter'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,6 +1,6 @@
 html, head, body, header,
 nav, h1, a, ul, li, main,
-section, p, footer, small {
+section, p, footer, small, link {
   margin: 0;
   padding: 0;
   border: 0;

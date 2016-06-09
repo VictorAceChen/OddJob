@@ -44,4 +44,24 @@ class Api::SessionsController < ApplicationController
 		end
 	end
 
+  def twitter_create
+    @user = User.find_or_create_by_auth_hash(auth_hash)
+    if @user
+      login(@user)
+      redirect_to root_url
+    else
+      render(
+        json: {
+          base: ["fail twitter login"]
+        },
+        status: 404
+      )
+    end
+  end
+
+  private
+
+  def auth_hash
+    request.env['omniauth.auth']
+  end
 end

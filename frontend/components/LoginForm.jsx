@@ -135,10 +135,7 @@ var LoginForm = React.createClass({
                   className="input_guest button blueButton"
                   onClick={this.handleGuestSubmit}>Guest Sign in
                 </button>
-                <button
-                  className="twitter_button"
-                  href="/auth/twitter">Sign in with Twitter
-                </button>
+                <a href="/auth/twitter" className="twitter_button">Sign in with Twitter</a>
                 </td>
               </tr>
             </tbody>
