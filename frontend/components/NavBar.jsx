@@ -66,12 +66,12 @@ var NavBar = React.createClass({
     } else if (["/login", "/signup"].indexOf(this.props.pathname) === -1) {
       return (
         <div id="u_nav">
-          <span className="navBi"><span id="navpromo" className="resume-promo">
-            <Link to="/signup" activeClassName="current">Sign up</Link>
-          </span></span>
-          <span className="navBi">
-            <Link to="/login" activeClassName="current">Sign in</Link>
-          </span>
+
+            <Link to="/signup" activeClassName="current"><span className="navBi">Sign up</span></Link>
+
+            <Link to="/login" activeClassName="current">
+              <span className="navBi">Sign in</span>
+            </Link>
         </div>
       );
     }
@@ -84,11 +84,13 @@ var NavBar = React.createClass({
     // </span>
     var public_nav = (
       <div id="p_nav">
-        <span className="navBi">
-          <a href="/" title="Jobs" id="jobsLink" className="selected">Find Jobs</a>
-        </span>
-        <span className="navBi">
-          <strong onClick={this.postJob} id="empLink">Employers / Post Job</strong>
+          <a href="/" title="Jobs" id="jobsLink" className="selected">
+            <strong className="navBi">Find Jobs</strong>
+
+            </a>
+
+        <span className="navBi" onClick={this.postJob}>
+          <strong id="empLink">Employers / Post Job</strong>
         </span>
       </div>
     );
