@@ -1,13 +1,11 @@
 var React = require('react');
 
-var Link = require('react-router').Link;
-var LinkedStateMixin = require('react-addons-linked-state-mixin');
+var Link = require('react-router').Link; 
 
 var SessionApiUtil = require('./../util/session_api_util');
 var SessionStore = require('./../stores/session_store');
 var UserApiUtil = require('./../util/user_api_util');
 
-window.SessionStore =SessionStore;
 
 var Account = React.createClass({
 
