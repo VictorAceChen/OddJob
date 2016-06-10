@@ -17,12 +17,12 @@ class Job < ActiveRecord::Base
     end
   end
 
-  # def logo_url
-  #   self.employer.logo_url
-  # end
-
-
   def logo_url
-    self.employer.image.url
+    self.employer.logo_url
   end
+
+#for amazon bucket
+  # def logo_url
+  #   self.employer.image.url
+  # end
 end
