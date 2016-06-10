@@ -17,13 +17,14 @@ var job = React.createClass({
     return {
       jobId: parseInt(this.props.params.jobId),
       job : {},
-      applyOpen: false,
       current_user: null
     };
   },
 
   getInfo: function () {
-    this.setState({ job: JobStore.find(this.state.jobId),
+    this.setState({
+      jobId: parseInt(this.props.params.jobId),
+      job: JobStore.find(this.state.jobId),
       current_user: SessionStore.currentUser().id
      });
 
@@ -58,6 +59,10 @@ var job = React.createClass({
     hashHistory.push("/jobs/");
   },
 
+  gotoEdit: function() {
+    hashHistory.push("/jobs/"+this.state.jobId+"/edit");
+  },
+
   render: function () {
     if(!this.state.job){return <div/> }; //stop initial rendering errors
 
@@ -76,7 +81,7 @@ var job = React.createClass({
 
     var edit_button;
     if (this.state.current_user === this.state.job.employer_id) {
-      edit_button = <button className="button blueButton" onClick={hashHistory.push("/jobs/"+this.state.jobId+"/edit")}>Edit</button>;
+      edit_button = <button className="button blueButton" onClick={this.gotoEdit}>Edit</button>;
     }
 
     return (

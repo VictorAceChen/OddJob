@@ -48,7 +48,7 @@ module.exports = {
     $.ajax({
       url: "api/jobs/" + data.id.toString(),
       type: "PATCH",
-      data: { job: { title: data.title, body: data.body } },
+      data: { job: { title: data.title, description: data.description, salary: data.salary, location: data.location } },
       success: function (job) {
         ServerActions.receiveJob(job);
       }
