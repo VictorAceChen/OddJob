@@ -79,6 +79,10 @@
 #userOptionsLabel {
 }
 
+.userOptionItem a{
+  color: blue;
+}
+
 .userNameRepeat{
   color: #a8a8a8;
   padding-right: 48px;
@@ -110,4 +114,7 @@ div.clear {
   color: #c00;
   font-weight: 700;
   font-size: 15px;
+}
+.editform{
+  margin-left: 33px;
 }

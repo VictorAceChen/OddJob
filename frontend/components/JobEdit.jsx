@@ -5,7 +5,7 @@ var Link = require('react-router').Link;
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var hashHistory = require('react-router').hashHistory;
 
-module.exports = React.createClass({
+var EditJob = React.createClass({
   mixins: [LinkedStateMixin],
 
   contextTypes: {
@@ -14,30 +14,18 @@ module.exports = React.createClass({
 
   getInitialState: function(){
     var job = JobStore.find(this.props.params.jobId) || {};
-    return{id: this.props.params.jobId, title: job.title, description: job.description, location: job.location, salary: job.salary};
+    return{id: job.id,title: job.title, description: job.description, location: job.location, salary: job.salary};
+  },
+
+  getInfo: function () {
+      var job = JobStore.find(this.props.params.jobId) || {};
+      this.setState({id: job.id, title: job.title, description: job.description, location: job.location, salary: job.salary});
   },
 
   componentDidMount: function() {
-    var job = JobStore.find(this.props.params.jobId) || {};
-    this.setState({id: this.props.params.jobId, title: job.title, description: job.description, location: job.location, salary: job.salary});
-  },
-
-
-  titleChange: function(e){
-    this.setState({title: e.target.value});
-  },
-
-  descriptionChange: function(e){
-    this.setState({description: e.target.value});
-  },
-
-  locationChange: function(e){
-    this.setState({location: e.target.value});
-  },
-
-  salaryChange: function(e){
-    this.setState({salary: e.target.value});
-  },
+    this.jobListener = JobStore.addListener(this.getInfo);
+    ClientActions.getJob(this.props.params.jobId);
+    },
 
   formSubmit: function() {
     ClientActions.editJob(this.state);
@@ -61,36 +49,36 @@ module.exports = React.createClass({
   },
 
   render: function () {
+    var salary = <input
+      id="salary"
+      name="salary"
+      type="number" min="0" step="1"
+      valueLink={this.linkState("salary")}/>;
     return (
 
       <div>
-        <form onSubmit={this.formSubmit} id="editform">
+        <h1>Edit Job</h1>
+        <div className="separator_top separator">&nbsp;</div>
+        <form onSubmit={this.formSubmit} className="editform loginform">
           <br/>
-            {this.textInput("company","Company")}
+            {this.textInput("title","Job Title:")}
             <br/>
-            {this.textInput("title","Job Title")}
-            <br/>
-            {this.textInput("location","Location")}
-            <br/>
-          <label >Title:</label>
-          <br/>
-          <input type="text" value={this.state.title} valueLink={this.linkState("title")}></input>
+            {this.textInput("location","Location:")}
             <br/>
             <label >Description:</label>
             <br/>
             <textarea rows="4" cols="50" name="description" form="editform" valueLink={this.linkState("description")}/>
             <br/>
-            <label >Location:</label>
+            <label htmlFor="salary">Salary (optional)</label>
             <br/>
-          <input type="text" value={this.state.location} valueLink={this.linkState("location")}></input>
-            <br/>
-            <label >Salary:</label>
-            <br/>
-          <input type="text" value={this.state.salary} valueLink={this.linkState("salary")}></input>
+            $&nbsp;{salary}
           <br/><br/>
           <input type="submit" value="Edit" className="button blueButton"></input>
         </form>
+        <div className="separator_bottom separator">&nbsp;</div>
       </div>
      );
   }
 });
+
+module.exports = EditJob;

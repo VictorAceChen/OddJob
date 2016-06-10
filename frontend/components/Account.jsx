@@ -8,6 +8,7 @@ var SessionStore = require('./../stores/session_store');
 var UserApiUtil = require('./../util/user_api_util');
 
 window.SessionStore =SessionStore;
+
 var Account = React.createClass({
 
 
@@ -18,6 +19,7 @@ var Account = React.createClass({
   },
 
 	render: function () {
+    debugger
     if(!SessionStore.currentUser().username) return(<div>Loading...</div>);
 		return (
       <div>

@@ -80,7 +80,6 @@ var JobForm = React.createClass({
       id="salary"
       name="salary"
       type="number" min="0" step="1"
-      placeholder=""
       valueLink={this.linkState("salary")}/>;
                   // <ReactQuill value={this.state.value} />
     return (

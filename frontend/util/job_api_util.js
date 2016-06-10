@@ -51,6 +51,11 @@ module.exports = {
       data: { job: { title: data.title, description: data.description, salary: data.salary, location: data.location } },
       success: function (job) {
         ServerActions.receiveJob(job);
+      },
+      error: function (xhr) {
+        var errors = xhr.responseJSON;
+        console.log(xhr);
+        console.log(xhr.responseText);
       }
     });
   },

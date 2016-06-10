@@ -26,7 +26,6 @@ class Api::JobsController < ApplicationController
 
   def update
     @job = Job.find(params[:id])
-
     if @job.update(job_params)
       render :show
     else
