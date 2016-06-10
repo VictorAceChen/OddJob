@@ -39,6 +39,19 @@ t1000 = User.create(
   logo_url: "http://vignette1.wikia.nocookie.net/villains/images/0/05/Skynet_Logo.jpg/revision/latest?cb=20130327183511"
 	)
 
+redskull = User.create(
+  username: "redskull",
+  password: "password",
+  logo_url: "http://vignette3.wikia.nocookie.net/marvelcinematicuniverse/images/4/4b/H_alternate_3.png/revision/latest/scale-to-width-down/270?cb=20160331154244"
+	)
+
+commander = User.create(
+  username: "commander",
+  password: "password",
+  logo_url: "http://orig05.deviantart.net/7fc4/f/2009/098/8/3/gi_joe_cobra_logo_by_flightcrank.jpg"
+	)
+
+
 Job.destroy_all
 job1 = Job.create(
 	title: "Senior VP of Technology",
@@ -58,40 +71,32 @@ job2 = Job.create(
   employer_id: gustavo.id
   )
 
-job3 = Job.create(
-	title: "Henchman",
-	jobtype: "intern",
-	salary:	0,
-  location: "Floating Cocoon",
-	description: "The Fluttering Horde are supporting characters of the Adult Swim program The Venture Bros. The Horde are the henchmen of The Monarch and Dr. Mrs. The Monarch and were created when The Monarch first began arching Doctor Venture.\nThe Horde is made up of many henchmen, in particular recurring characters like 21 and 24. The Horde wear identical yellow butterfly-like suits, and aside from #21, #24, #1, #86, #87 and, a wingless recruit in the first episode named Speedy, are virtually indistinguishable.",
-  employer_id: monarch.id
-  )
-
-job3 = Job.create(
-	title: "Moppet #3",
-	jobtype: "full-time",
-	salary:	0,
-  location: "Floating Cocoon",
-	description: "The Fluttering Horde are supporting characters of the Adult Swim program The Venture Bros. The Horde are the henchmen of The Monarch and Dr. Mrs. The Monarch and were created when The Monarch first began arching Doctor Venture.\nThe Horde is made up of many henchmen, in particular recurring characters like 21 and 24. The Horde wear identical yellow butterfly-like suits, and aside from #21, #24, #1, #86, #87 and, a wingless recruit in the first episode named Speedy, are virtually indistinguishable.",
-  employer_id: monarch.id
-  )
-
 job4 = Job.create(
 	title: "Test Subject",
 	jobtype: "full-time",
-	salary:	100000,
+	salary:	50,
   location: "The Hive",
 	description: "Umbrella was a giant conglomerate which operated ruthlessly as a major international player in a number of markets; including pharmaceuticals and medical equipment, as well as top-secret operations utilizing genetic engineering and biological weaponry. The company also had a more benevolent public face for the ignorant masses, producing cosmetics, consumer products, and foods.",
   employer_id: wesker.id
+  )
+
+
+job11 = Job.create(
+	title: "Replacement Winter Soldier",
+	jobtype: "full-time",
+	salary:	0,
+  location: "Gehenna",
+	description: "Hydra is a world-wide subversive organization dedicated to global domination. At its height, Hydra was the most extensive, powerful, and dangerous such organization in history. Hydra is almost entirely composed of men, with some notable exceptions, such as former member Lara Brown, the daughter of a Supreme Hydra, and so-called Madame Hydra, who later became known as the Viper. Hydra agents wear green costumes with cowls concealing the entire head except for the mouth and chin. Their organization takes its name from the many-headed serpent-like monster known for its ability to grow two heads immediately to replace any head that was severed. Hydra prides itself on its ability to regroup and rebuild itself, allegedly mightier than before, after any major defeat. Indeed, the organization has now endured for four decades.",
+  employer_id: redskull.id
   )
 
 job5 = Job.create(
 	title: "Mercenary",
 	jobtype: "full-time",
 	salary:	500000,
-  location: "The Hive",
-	description: "Umbrella was a giant conglomerate which operated ruthlessly as a major international player in a number of markets; including pharmaceuticals and medical equipment, as well as top-secret operations utilizing genetic engineering and biological weaponry. The company also had a more benevolent public face for the ignorant masses, producing cosmetics, consumer products, and foods.",
-  employer_id: wesker.id
+  location: "Castle Destro",
+	description: "Cobra is a ruthless terrorist organization determined to rule the world. They are usually led by the ruthless Cobra Commander, although others have at times usurped control. It relies on the might of its legions of Cobra Vipers and Cobra Troopers to execute its diabolical schemes while trying to destroy its main enemy: G.I. Joe.",
+  employer_id: commander.id
   )
 
 job6 = Job.create(
@@ -103,13 +108,14 @@ job6 = Job.create(
   employer_id: t1000.id
   )
 
-job7 = Job.create(
-	title: "Test Subject",
-	jobtype: "full-time",
-	salary:	500000,
-  location: "Skynet Central",
-	description: "Skynet, or Titan, is a highly advanced artificial intelligence. Once it became self-aware, it saw humanity as a threat to its existence and decided to trigger the nuclear holocaust Judgment Day and deploy an army of Terminators against humanity. It is the main antagonist of the Terminator Franchise.",
-  employer_id: t1000.id
+
+job3 = Job.create(
+	title: "Henchman",
+	jobtype: "intern",
+	salary:	0,
+  location: "Floating Cocoon",
+	description: "The Fluttering Horde are supporting characters of the Adult Swim program The Venture Bros. The Horde are the henchmen of The Monarch and Dr. Mrs. The Monarch and were created when The Monarch first began arching Doctor Venture.\nThe Horde is made up of many henchmen, in particular recurring characters like 21 and 24. The Horde wear identical yellow butterfly-like suits, and aside from #21, #24, #1, #86, #87 and, a wingless recruit in the first episode named Speedy, are virtually indistinguishable.",
+  employer_id: monarch.id
   )
 
 job8 = Job.create(
