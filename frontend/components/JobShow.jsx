@@ -86,6 +86,8 @@ var job = React.createClass({
 
     return (
       <div className="job_detail">
+      <h1>Job Detail</h1>
+      <div className="separator_top separator">&nbsp;</div>
       <img src={this.state.job.logo_url} className="detail_logo"/>
         <div id="job_info" data-tn-component="jobHeader">
           <b className="jobtitle"><font size="+1">{this.state.job.title}</font></b>
@@ -100,9 +102,11 @@ var job = React.createClass({
             {this.state.job.description}
           </p>
         </div>
+        <br/>
         {follow_button}
         {delete_button}
         {edit_button}
+      <div className="separator_bottom separator">&nbsp;</div>
       </div>
 
     );

@@ -35,6 +35,7 @@ var MyJobIndex = React.createClass({
     return (
       <div className="myjob-index">
         <h1>My Jobs</h1>
+        <div className="separator_top separator">&nbsp;</div>
         <table cellPadding="0" cellSpacing="0" border="0" width="100%">
         <tbody>
           <tr>
@@ -50,7 +51,7 @@ var MyJobIndex = React.createClass({
           </tr>
         </tbody>
         </table>
-
+        <div className="separator_bottom separator">&nbsp;</div>
       </div>
     );
   }

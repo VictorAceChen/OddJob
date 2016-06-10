@@ -19,17 +19,17 @@ var Account = React.createClass({
   },
 
 	render: function () {
-    debugger
     if(!SessionStore.currentUser().username) return(<div>Loading...</div>);
 		return (
       <div>
         <h1>Account</h1>
         <div className="separator_top separator">&nbsp;</div>
-        <p>Username:&nbsp;</p>{SessionStore.currentUser().username}
-        <br/>
+        <p>Username:</p>{SessionStore.currentUser().username}
+        <br/><br/>
           <p>Current Logo:&nbsp;</p>
-            <br/>
-            <img src={SessionStore.currentUser().logo_url} className=""/>
+            <br/><br/>
+            <img src={SessionStore.currentUser().logo_url} className="index_logo group"/>
+            <br/><br/><br/><br/><br/><br/><br/>
         <div className="separator_bottom separator">&nbsp;</div>
     </div>
 
