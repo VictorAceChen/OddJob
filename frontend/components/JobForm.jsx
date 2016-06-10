@@ -68,9 +68,6 @@ var JobForm = React.createClass({
     if (this.state.location === ""){
       errors.push("location cannot be blank");
     }
-    if (isWholeInteger(this.state.salary)){
-      errors.push("Salary must be a number");
-    }
     this.setState({ error: errors });
     if (errors.length === 0){
       JobApiUtil.createJob(jobObject, this.goToJob);
@@ -97,8 +94,6 @@ var JobForm = React.createClass({
         </div>
         <div id="form-content">
           <form onSubmit={this.handleSubmit}>
-            {this.textInput("company","Company")}
-            <br/>
             {this.textInput("title","Job Title")}
             <br/>
             {this.textInput("location","Location")}
