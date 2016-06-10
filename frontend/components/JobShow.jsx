@@ -74,6 +74,11 @@ var job = React.createClass({
       delete_button = <button className="button blueButton" onClick={this.deleteJob}>Delete</button>;
     }
 
+    var edit_button;
+    if (this.state.current_user === this.state.job.employer_id) {
+      edit_button = <button className="button blueButton" onClick={hashHistory.push("/jobs/"+this.state.jobId+"/edit")}>Edit</button>;
+    }
+
     return (
       <div className="job_detail">
       <img src={this.state.job.logo_url} className="detail_logo"/>
@@ -92,6 +97,7 @@ var job = React.createClass({
         </div>
         {follow_button}
         {delete_button}
+        {edit_button}
       </div>
 
     );

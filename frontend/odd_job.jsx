@@ -15,6 +15,7 @@ var LoginForm = require('./components/LoginForm');
 var Account = require('./components/Account');
 var JobIndex = require('./components/JobIndex.jsx');
 var JobShow = require('./components/JobShow');
+var JobEdit = require('./components/JobEdit');
 var MyJobIndex = require('./components/MyJob/MyJobIndex');
 //Auth
 var SessionStore = require('./stores/session_store');
@@ -30,6 +31,7 @@ var Router = (
     <Route path="/account" component={ Account } />
     <Route path="/signup" component={ LoginForm } />
     <Route path="jobs/:jobId" component={ JobShow }/>
+    <Route path="/jobs/:jobId/edit" component={ JobEdit }/>
     </Route>
   </Router>
 );
