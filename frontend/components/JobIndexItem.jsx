@@ -5,12 +5,12 @@ var MyJobClientActions = require('../actions/myjob_client_actions.js');
 var MyJobStore = require('../stores/myjob_store');
 var hashHistory = require('react-router').hashHistory;
 
-module.exports = React.createClass({
+var JobIndexItem = React.createClass({
 
   getInitialState: function() {
     return {deleted: false};
   },
-  
+
   editJob: function (event) {
     event.preventDefault();
     var url = "/jobs/" + this.props.job.id.toString() + "/edit";
@@ -61,8 +61,6 @@ module.exports = React.createClass({
               >{job.title}</Link>
               <br/>
               <div className="job_base_info">
-              <span className="company">{this.props.job.title}</span>
-              &nbsp;-&nbsp;
               <span className="location">{this.props.job.location}</span>
                <div>${this.props.job.salary}</div>
                <p className="summary">{this.props.job.summary}</p>
@@ -75,3 +73,8 @@ module.exports = React.createClass({
     );
   }
 });
+
+// <span className="company">{this.props.job.title}</span>
+// &nbsp;-&nbsp;
+
+module.exports = JobIndexItem;

@@ -92,15 +92,14 @@ var job = React.createClass({
         <div id="job_info" data-tn-component="jobHeader">
           <b className="jobtitle"><font size="+1">{this.state.job.title}</font></b>
           <br/>
-          <span className="company">COMPANY NAME</span>
-          -
           <span className="location">{this.state.job.location}</span>
           <br/>
-            Part-time,&nbsp;Temporary
+          <span className="jobtype">{this.state.job.jobtype}</span>
             <br/>
           <p id="job_summary" className="summary">
             {this.state.job.description}
           </p>
+          <span className="salary">{this.state.job.salary}</span>
         </div>
         <br/>
         {follow_button}

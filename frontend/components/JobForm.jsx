@@ -12,6 +12,10 @@ var JobStore = require("../stores/job_store");
 // var ReactQuill = require('react-quill');
 var NoteToolbar = require('./QuillToolbar');
 
+function isWholeInteger(str) {
+    return /^\+?(0|[1-9]\d*)$/.test(str);
+}
+
 var JobForm = React.createClass({
 
   mixins: [LinkedStateMixin],
@@ -63,6 +67,9 @@ var JobForm = React.createClass({
     }
     if (this.state.location === ""){
       errors.push("location cannot be blank");
+    }
+    if (isWholeInteger(this.state.salary)){
+      errors.push("Salary must be a number");
     }
     this.setState({ error: errors });
     if (errors.length === 0){
