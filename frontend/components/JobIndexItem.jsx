@@ -48,12 +48,12 @@ var JobIndexItem = React.createClass({
     //         <option value="hired">hired</option>
     //         <option value="hired">remove</option>
     //       </select> : null;
-
+// debugger
 
     return (
       <div>
         <li className="job_idx_row group">
-        <img src={this.props.job.logo_url} className="index_logo"/>
+          <img src={this.props.job.logo_url} className="index_logo"/>
           <div className="result" id={this.props.job.id}>
             <Link
               to={"/jobs/" + this.props.job.id.toString()}

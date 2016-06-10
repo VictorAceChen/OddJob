@@ -85,11 +85,11 @@ var LoginForm = React.createClass({
     var greeting;
     if (this.formType() === "login") {
       formTitle = "Sign In";
-      navLink = <Link to="/signup" activeClassName="current">Create an account free</Link>;
+      navLink = <Link to="/signup" activeClassName="current" className="link">Create an account free</Link>;
       greeting = "Not a member? ";
     } else {
       formTitle = "Create An Account";
-      navLink = <Link to="/login" activeClassName="current">Sign In</Link>;
+      navLink = <Link to="/login" activeClassName="current" className="link">Sign In</Link>;
       greeting = "Already have an account? ";
     }
 

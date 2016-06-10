@@ -46,16 +46,12 @@ ActiveRecord::Schema.define(version: 20160610131807) do
     t.string   "username"
     t.string   "company_name"
     t.string   "password_digest"
-    t.string   "session_token",                                                                                                                                null: false
-    t.datetime "created_at",                                                                                                                                   null: false
-    t.datetime "updated_at",                                                                                                                                   null: false
-    t.string   "logo_url",              default: "http://www.villagehatshop.com/photos/product/standard/2393460S1799/derby-bowler-hats/harker-bowler-hat.jpg"
+    t.string   "session_token",                                                                                                                             null: false
+    t.datetime "created_at",                                                                                                                                null: false
+    t.datetime "updated_at",                                                                                                                                null: false
+    t.string   "logo_url",           default: "http://www.villagehatshop.com/photos/product/standard/2393460S1799/derby-bowler-hats/harker-bowler-hat.jpg"
     t.string   "twitter_uid"
     t.string   "facebook_uid"
-    t.string   "logo_url_file_name"
-    t.string   "logo_url_content_type"
-    t.integer  "logo_url_file_size"
-    t.datetime "logo_url_updated_at"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"

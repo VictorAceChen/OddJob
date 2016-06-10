@@ -11,6 +11,13 @@ window.SessionStore =SessionStore;
 
 var Account = React.createClass({
 
+  getInitialState: function() {
+    return({
+      imageFile: null,
+      imageUrl: null
+    });
+  },
+
 
 
   componentWillMount: function () {
@@ -28,7 +35,9 @@ var Account = React.createClass({
         <br/><br/>
           <p>Current Logo:&nbsp;</p>
             <br/><br/>
+            <div>
             <img src={SessionStore.currentUser().logo_url} className="index_logo group"/>
+            </div>
             <br/><br/><br/><br/><br/><br/><br/>
         <div className="separator_bottom separator">&nbsp;</div>
     </div>
