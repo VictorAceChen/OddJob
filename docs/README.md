@@ -8,12 +8,12 @@
 OddJob is a web application inspired by Indeed that will be build using Ruby on Rails and React.js.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
 
 - [X] New account creation, login, and guest/demo login
-- [ ] Smooth, bug-free navigation
-- [ ] Adequate seed data to demonstrate the site's features
-- [ ] The minimally necessary features for Indeed-inspired site: job creation and saving, job editing, and jobs organized into jobTypes
-- [ ] Hosting on Heroku
-- [ ] CSS styling that is satisfactorily visually appealing
-- [ ] A production README, replacing this README (**NB**: check out the [sample production README](https://github.com/appacademy/sample-project-proposal/blob/master/docs/production_readme.md) -- you'll write this later)
+- [X] Smooth, bug-free navigation
+- [X] Adequate seed data to demonstrate the site's features
+- [X] The minimally necessary features for Indeed-inspired site: job creation and saving, job editing, and jobs organized into jobTypes
+- [X] Hosting on Heroku
+- [X] CSS styling that is satisfactorily visually appealing
+- [X] A production README, replacing this README (**NB**: check out the [sample production README](https://github.com/appacademy/sample-project-proposal/blob/master/docs/production_readme.md) -- you'll write this later)
 
 ## Product Goals and Priorities
 OddJob will allow users to do the following:
@@ -23,9 +23,9 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 - [X] Create an account (MVP)
 - [X] Log in / Log out, including as a Guest/Demo User (MVP)
-- [ ] Create, read, edit, and (delete) jobs (MVP)
-- [ ] Organize jobs within JobTypes (MVP)
-- [ ] Tag jobs with multiple tags (expected feature, but not MVP)
+- [X] Create, read, edit, and (delete) jobs (MVP)
+- [ ] Organize jobs within JobTypes
+- [ ] Apply for a job (expected feature, but not MVP)
 - [ ] Apply complex styling to jobs while editing (expected feature, but not MVP)
 
 ## Design Docs
@@ -60,37 +60,37 @@ the API.
 
 - [X] create Job model
 - [X] seed the database with a small amount of test data
-- [ ] CRUD API for jobs (JobsController`)
-- [ ] jBuilder views jobs
-- [ ] setup Webpack & Flux scaffold
-- [ ] setup `APIUtil` to interact with the API
-- [ ] test out API interaction in the console.
+- [X] CRUD API for jobs (JobsController`)
+- [X] jBuilder views jobs
+- [X] setup Webpack & Flux scaffold
+- [X] setup `APIUtil` to interact with the API
+- [X] test out API interaction in the console.
 
 ### Phase 3: Flux Architecture and Router (1.5 days)
 
 **Objective:Job can be created, read, edited and destroyed with the
 user interface.
 
-- [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
+- [X] setup the flux loop with skeleton files
+- [X] setup React Router
 - implement each job component, building out the flux loop as needed.
-  - [ ] 'JobsIndex`
-  - [ ] `JobIndexItem`
-  - [ ] `JobForm`
+  - [X] 'JobsIndex`
+  - [X] `JobIndexItem`
+  - [X] `JobForm`
 
 ### Phase 4: Start Styling (0.5 days)
 
 **Objective:** Existing pages (including singup/signin) will look good.
 
-- [ ] create a basic style guide
-- [ ] position elements on the page
-- [ ] add basic colors & styles
+- [X] create a basic style guide
+- [X] position elements on the page
+- [X] add basic colors & styles
 
 ### Phase 5: JobTypes (1 day)
 
-**Objective:** Jobs belong Companies, and can be viewed by JobType. (and maybe type)
+**Objective:** Jobs belong to employer, and can be viewed by JobType. (and maybe type)
 
-- [ ] create JobType model
+- [X] create JobType model
 - build out API, Flux loop, and components for:
   - [] JobType CRUD
   - [ ] adding jobs requires a jobType
@@ -101,15 +101,13 @@ user interface.
 Phase 3 adds organization to the Jobs. Jobs belong to a JobType,
 which has its own `Index` view.
 
-### Phase 6: Tags (1 day)
+### Phase 6: Apply for Job (1 day)
 
-**ObjecJob:** Jobs can be tagged with multiple tags, and tags are searchable.(skill set)
+**ObjecJob:** Jobs can have applications.(skill set)
 
-- [ ] create `Tag` model and join table
+- [ ] create `Application` model and join table
 - build out API, Flux loop, and components for:
-  - [ ] fetching tags for job listing
-  - [ ] adding tags to job listing
-  - [ ] creating tags while adding job listing
+  - [ ] adding applications to job listing 
   - [ ] search job listing by tag
 - [ ] Style new elements
 
@@ -117,10 +115,10 @@ which has its own `Index` view.
 
 **objective:** Users can add job to myJob.
 
-- [ ] create myJob model
+- [X] create myJob model
 - build out API, Flux loop, and components for:
-  - [ ] add/remove jobs from myJob
-  - [ ] update myJob item status
+  - [X] add/remove jobs from myJob
+  - [X] update myJob item status
 
 ### Phase 8: Styling Cleanup and Seeding (1 day)
 
