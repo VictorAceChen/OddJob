@@ -8,7 +8,7 @@ module.exports = {
         ServerActions.receiveAll(jobs);
       },
       error: function (xhr) {
-        console.log("error fetching jobs");
+        // console.log("error fetching jobs");
         var errors = xhr.responseJSON;
       }
     });
@@ -21,7 +21,7 @@ module.exports = {
         ServerActions.receiveJob(job);
       },
       error: function (xhr) {
-        console.log("error getting jobs");
+        // console.log("error getting jobs");
         // var errors = xhr.responseJSON;
         // console.log(xhr);
         // console.log(xhr.responseText);
@@ -39,7 +39,7 @@ module.exports = {
         travelTo(job.id);
       },
       error: function (xhr) {
-        console.log("error creating jobs");
+        // console.log("error creating jobs");
       }
     });
   },
@@ -54,8 +54,8 @@ module.exports = {
       },
       error: function (xhr) {
         var errors = xhr.responseJSON;
-        console.log(xhr);
-        console.log(xhr.responseText);
+        // console.log(xhr);
+        // console.log(xhr.responseText);
       }
     });
   },

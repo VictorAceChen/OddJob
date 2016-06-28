@@ -32,7 +32,6 @@ var JobIndexItem = React.createClass({
     if(this.state.deleted) return null;
 
     var job = this.props.job;
-    // debugger
     if(!job) return(<div></div>);
 
     var button = this.props.showButton ? <button className="button blueButton removeButton" onClick={this.deleteMyJob}>Remove</button> : null;

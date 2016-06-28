@@ -9,9 +9,9 @@ module.exports = {
         ServerActions.receiveAll(myjobs);
       },
       error: function (xhr) {
-        console.log("error fetching myjobs");
+        // console.log("error fetching myjobs");
         var errors = xhr.responseJSON;
-        console.log(errors);
+        // console.log(errors);
       }
     });
   },
@@ -27,12 +27,12 @@ module.exports = {
         }
       },
       success: function (myjob) {
-        // debugger
+        
         if(!myjob) return; //hacky need to fix
         ServerActions.createMyJob(myjob);
       },
       error: function (xhr) {
-        console.log("error creating myjobs");
+        // console.log("error creating myjobs");
       }
     });
   },

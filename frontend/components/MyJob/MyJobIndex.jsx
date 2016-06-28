@@ -18,7 +18,6 @@ var MyJobIndex = React.createClass({
 
   componentDidMount: function () {
     this.myJobListener = MyJobStore.addListener(this.getMyJobs);
-    // debugger
     MyJobClientActions.fetchMyJobs();
   },
 
@@ -29,9 +28,7 @@ var MyJobIndex = React.createClass({
 
   render: function() {
     if(this.state.myjobs.length === 0) return(null);
-
-    // MyJobStore.all().map(function(job){return job.id})
-// debugger
+    
     return (
       <div className="myjob-index">
         <h1>My Jobs</h1>

@@ -8,7 +8,6 @@ var images;
 
 
 var rotateImages = function(container, list) {
-// debugger
   images = list;
   el = document.getElementById(container);
   rotate();
