@@ -40,6 +40,11 @@ var NavBar = React.createClass({
     SessionStore.addListener(this.forceUpdate.bind(this));
   },
 
+  handleGuestSubmit: function(e) {
+    e.preventDefault();
+    SessionApiUtil.login({ username: "guest", password: "password" });
+  },
+
   greeting: function(){
 
     var userOptions = (
@@ -69,7 +74,7 @@ var NavBar = React.createClass({
     } else if (["/login", "/signup"].indexOf(this.props.pathname) === -1) {
       return (
         <div id="u_nav">
-
+            <a onClick={this.handleGuestSubmit}><span className="navBi">Guest Login</span></a>
             <Link to="/signup" activeClassName="current"><span className="navBi">Sign up</span></Link>
 
             <Link to="/login" activeClassName="current">
