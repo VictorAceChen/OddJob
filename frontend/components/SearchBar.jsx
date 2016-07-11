@@ -1,5 +1,6 @@
 var React = require('react');
 var Link = require('react-router').Link;
+var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var SessionStore = require('./../stores/session_store');
 var SessionApiUtil = require('./../util/session_api_util');
 var hashHistory = require('react-router').hashHistory;
@@ -9,6 +10,11 @@ var JobForm = require('./JobForm');
 
 
 var SearchBar = React.createClass({
+	mixins: [LinkedStateMixin],
+
+  getInitialState: function(){
+    return{search_str: ""};
+  },
 
   handleSubmit: function(event){
     event.preventDefault();
@@ -28,7 +34,7 @@ var SearchBar = React.createClass({
         <div className="input">
           <label className="search_text_label">what:</label>
           <br/>
-          <input type="text" className="what-input" name="what"/>
+          <input type="text" className="what-input" name="what" valueLink={this.linkState("search_str")}/>
           <br/>
           <label className="search_descrip_label">job title, keywords or company</label>
         </div>

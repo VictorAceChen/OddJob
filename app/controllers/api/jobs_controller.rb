@@ -2,6 +2,7 @@ class Api::JobsController < ApplicationController
 	before_action :require_signed_in!, only: [:create, :destroy]
 
 	def index
+		debugger
 		@jobs = Job.all
 	end
 
