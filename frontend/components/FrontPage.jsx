@@ -1,7 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var JobStore = require('../stores/job_store');
-var JobSearch = require('./SearchBar');
 
 // window.onload = rotate;
 
@@ -67,7 +66,6 @@ var FrontPage = React.createClass({
   render: function() {
     return (
       <div className="centered">
-        <JobSearch/>
         <img src={adImages[0]} ref="adBanner"  id="adBanner" className="adBanner"/>
       </div>
     );

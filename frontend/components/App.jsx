@@ -19,6 +19,7 @@ var App = React.createClass({
 
       <div id="main_page">
         <NavBar pathname={this.props.location.pathname}/>
+        <SearchBar/>
         {this.props.children}
       </div>
     );

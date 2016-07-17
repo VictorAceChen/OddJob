@@ -60,7 +60,6 @@ module.exports = React.createClass({
     return (
 
       <div className="job-index">
-      <SearchBar/>
         <table cellPadding="0" cellSpacing="0" border="0" width="100%">
         <tbody>
           <tr>
