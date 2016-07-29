@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160610131807) do
+ActiveRecord::Schema.define(version: 20160729145955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,22 +24,26 @@ ActiveRecord::Schema.define(version: 20160610131807) do
     t.integer  "salary"
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
+    t.index ["employer_id"], name: "index_jobs_on_employer_id", using: :btree
+    t.index ["jobtype"], name: "index_jobs_on_jobtype", using: :btree
+    t.index ["location"], name: "index_jobs_on_location", using: :btree
+    t.index ["salary"], name: "index_jobs_on_salary", using: :btree
+    t.index ["title"], name: "index_jobs_on_title", using: :btree
   end
 
-  add_index "jobs", ["employer_id"], name: "index_jobs_on_employer_id", using: :btree
-  add_index "jobs", ["jobtype"], name: "index_jobs_on_jobtype", using: :btree
-  add_index "jobs", ["location"], name: "index_jobs_on_location", using: :btree
-  add_index "jobs", ["salary"], name: "index_jobs_on_salary", using: :btree
-  add_index "jobs", ["title"], name: "index_jobs_on_title", using: :btree
+  create_table "messages", force: :cascade do |t|
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "my_jobs", force: :cascade do |t|
     t.integer "user_id",               null: false
     t.integer "job_id",                null: false
     t.string  "status",  default: "-", null: false
+    t.index ["job_id"], name: "index_my_jobs_on_job_id", using: :btree
+    t.index ["user_id"], name: "index_my_jobs_on_user_id", using: :btree
   end
-
-  add_index "my_jobs", ["job_id"], name: "index_my_jobs_on_job_id", using: :btree
-  add_index "my_jobs", ["user_id"], name: "index_my_jobs_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
@@ -56,8 +59,7 @@ ActiveRecord::Schema.define(version: 20160610131807) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
-
-  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end
