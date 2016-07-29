@@ -1,0 +1,12 @@
+.slick-track {
+    position: relative;
+    width: 700px;
+}
+
+.slick-track img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 150px;
+    width: inherit;
+}

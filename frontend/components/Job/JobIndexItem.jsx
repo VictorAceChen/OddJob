@@ -1,8 +1,8 @@
 var React = require('react');
 var Link = require('react-router').Link;
-var ClientActions = require('../actions/client_actions.js');
-var MyJobClientActions = require('../actions/myjob_client_actions.js');
-var MyJobStore = require('../stores/myjob_store');
+var ClientActions = require('../../actions/client_actions.js');
+var MyJobClientActions = require('../../actions/myjob_client_actions.js');
+var MyJobStore = require('../../stores/myjob_store');
 var hashHistory = require('react-router').hashHistory;
 
 var JobIndexItem = React.createClass({

@@ -1,12 +1,12 @@
 var React = require('react');
-var JobStore = require('../stores/job_store.js');
-var ClientActions = require('../actions/client_actions.js');
+var JobStore = require('../../stores/job_store.js');
+var ClientActions = require('../../actions/client_actions.js');
 
 var JobIndexItem = require('./JobIndexItem.jsx');
 var JobForm = require('./JobForm.jsx');
-var SearchBar = require('./SearchBar');
+var SearchBar = require('../SearchBar');
 
-var rotateImages = require('./rotateImages.js');
+var rotateImages = require('../rotateImages.js');
 
 // window.onload = rotate;
 var theAd = 0;

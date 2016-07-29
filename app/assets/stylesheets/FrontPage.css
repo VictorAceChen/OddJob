@@ -6,29 +6,3 @@
   top: 50%;
   left: 33%;
 }
-
-/*@-webkit-keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-.fade-in {
-    -webkit-animation: fadeIn .5s ease-in 1 forwards;
-  animation: fadeIn .5s ease-in 1 forwards;
-  opacity: 0;
-}
-
-.fade-out {
-    -webkit-transition: opacity 3s ease-in-out;
-    -moz-transition: opacity 3s ease-in-out;
-    -ms-transition: opacity 3s ease-in-out;
-    -o-transition: opacity 3s ease-in-out;
-     opacity: 1;
-}*/

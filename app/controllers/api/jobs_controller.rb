@@ -2,7 +2,22 @@ class Api::JobsController < ApplicationController
 	before_action :require_signed_in!, only: [:create, :destroy]
 
 	def index
-		@jobs = Job.all
+		# uri    = URI.parse(url)
+		# params = CGI.parse(uri.query)
+		# @jobs = Job.all.reverse
+		search = params[:search_str]
+		@query = <<-SQL.strip_heredoc
+					title LIKE %#{search}%
+					OR location LIKE %#{search}%
+					OR description LIKE %#{search}%
+				SQL
+
+		@jobs = Job.where("title LIKE :str
+		OR location LIKE :str
+		OR description LIKE :str",
+	  {str: params[:search_str]}).reverse
+
+		@jobs = Job.all.reverse
 	end
 
 	def show
@@ -10,11 +25,6 @@ class Api::JobsController < ApplicationController
 	end
 
 	def create
-    #Using association by user.job_posts.new()
-    # auto fills fk parameter, instead of the following
-    # @job = Job.new(job_params)
-    # @job.employer_id = current_user.id
-
     @job = current_user.job_posts.new(job_params)
     if @job.save
       render json: @job

@@ -6,7 +6,7 @@ var hashHistory = require('react-router').hashHistory;
 
 var Modal = require("react-modal");
 var style = require('./ModalSetting').post;
-var JobForm = require('./JobForm');
+var JobForm = require('./Job/JobForm');
 
 
 var NavBar = React.createClass({

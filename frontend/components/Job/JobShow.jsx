@@ -1,13 +1,13 @@
 var React = require('react');
 var Link = require('react-router').Link;
 var Modal = require("react-modal");
-var SessionStore = require('../stores/session_store');
-var ClientActions = require('../actions/client_actions.js');
-var MyJobClientActions = require('../actions/myjob_client_actions.js');
-var JobStore = require('../stores/job_store');
+var SessionStore = require('../../stores/session_store');
+var ClientActions = require('../../actions/client_actions.js');
+var MyJobClientActions = require('../../actions/myjob_client_actions.js');
+var JobStore = require('../../stores/job_store');
 var JobApply = require('./JobApply');
 
-var style = require('./ModalSetting');
+var style = require('../ModalSetting');
 
 var hashHistory = require('react-router').hashHistory;
 

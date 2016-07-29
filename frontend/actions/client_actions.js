@@ -21,5 +21,11 @@ module.exports = {
 
   deleteJob: function (id) {
     ApiUtil.deleteJob(id);
-  }
+  },
+
+  resetReceived: function(){
+  AppDispatcher.dispatch({
+    actionType: JobConstants.RESET_RECEIVED,
+  });
+}
 };

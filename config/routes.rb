@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root to: "static_pages#root"
+
   namespace :api, defaults: {format: :json} do
 
     resources :users, only: [:new, :create, :show]
@@ -14,6 +16,5 @@ Rails.application.routes.draw do
   get '/auth/twitter/callback', to: 'api/sessions#twitter_create'
   get '/auth/facebook/callback', to: "api/sessions#create_with_facebook"
 
-  root "static_pages#root"
 
 end

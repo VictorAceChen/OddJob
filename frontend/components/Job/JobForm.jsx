@@ -1,16 +1,13 @@
 var React = require('react');
-var JobApiUtil = require('../util/job_api_util');
+var JobApiUtil = require('../../util/job_api_util');
 var hashHistory = require('react-router').hashHistory;
 
 var Link = require('react-router').Link;
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 
-var ClientActions = require('../actions/client_actions.js');
+var ClientActions = require('../../actions/client_actions.js');
 
-var JobStore = require("../stores/job_store");
-
-// var ReactQuill = require('react-quill');
-var NoteToolbar = require('./QuillToolbar');
+var JobStore = require("../../stores/job_store");
 
 function isWholeInteger(str) {
     return /^\+?(0|[1-9]\d*)$/.test(str);
@@ -77,9 +74,7 @@ var JobForm = React.createClass({
 
   render: function () {
     var error = error ? error : this.state.error.join(", ");
-
-    var toolbar = <NoteToolbar/>;
-
+ 
     var salary = <input
       id="salary"
       name="salary"

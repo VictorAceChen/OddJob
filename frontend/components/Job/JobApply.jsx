@@ -1,5 +1,5 @@
 var React = require('react');
-var JobApiUtil = require('../util/job_api_util');
+var JobApiUtil = require('../../util/job_api_util');
 var Link = require('react-router').Link;
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var hashHistory = require('react-router').hashHistory;
@@ -11,7 +11,7 @@ var JobApply = React.createClass({
 
   getInitialState: function () {
     return ({ company: "", title: "", location: "", description: "", salary: null, error: [] });
-  }, 
+  },
 
   render: function () {
     var job = this.props.job;

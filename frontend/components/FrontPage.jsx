@@ -1,7 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var JobStore = require('../stores/job_store');
-
 // window.onload = rotate;
 
 var theAd = 0;
@@ -66,7 +65,7 @@ var FrontPage = React.createClass({
   render: function() {
     return (
       <div className="centered">
-        <img src={adImages[0]} ref="adBanner"  id="adBanner" className="adBanner"/>
+        
       </div>
     );
   }

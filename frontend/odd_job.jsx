@@ -13,9 +13,9 @@ var App = require('./components/App');
 var FrontPage = require('./components/FrontPage');
 var LoginForm = require('./components/LoginForm');
 var Account = require('./components/Account');
-var JobIndex = require('./components/JobIndex.jsx');
-var JobShow = require('./components/JobShow');
-var JobEdit = require('./components/JobEdit');
+var JobIndex = require('./components/Job/JobIndex.jsx');
+var JobShow = require('./components/Job/JobShow');
+var JobEdit = require('./components/Job/JobEdit');
 var MyJobIndex = require('./components/MyJob/MyJobIndex');
 //Auth
 var SessionStore = require('./stores/session_store');

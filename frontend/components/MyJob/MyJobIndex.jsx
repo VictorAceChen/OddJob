@@ -5,7 +5,7 @@ var hashHistory = require('react-router').hashHistory;
 var Link = require('react-router').Link;
 var MyJobClientActions = require('../../actions/myjob_client_actions.js');
 
-var JobIndexItem = require('../JobIndexItem.jsx');
+var JobIndexItem = require('../Job/JobIndexItem.jsx');
 
 var MyJobIndex = React.createClass({
   getInitialState: function() {
@@ -28,7 +28,7 @@ var MyJobIndex = React.createClass({
 
   render: function() {
     if(this.state.myjobs.length === 0) return(null);
-    
+
     return (
       <div className="myjob-index">
         <h1>My Jobs</h1>

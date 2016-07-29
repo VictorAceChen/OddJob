@@ -14,32 +14,12 @@ OddJob is a full-stack web application, based on Indeed, for searching and posti
 
 ![Search](./docs/SearchPage.png)
 
-OddJob is truly a single-page; all content is delivered on one static page.  The root page listens to a `SessionStore` and renders content based on a call to `SessionStore.currentUser()`.  Sensitive information is kept out of the frontend of the app by making an API call to `SessionsController#get_user`.
-
-```ruby
-
-class Api::SessionsController < ApplicationController
-
-	def create
-		@user = User.find_by_credentials(
-      params[:user][:username],
-      params[:user][:password]
-    )
-
-    if @user
-			login(@user)
-			render "api/users/show"
-		else
-			render(
-        json: {
-          base: ["Incorrect password or email address"]
-        },
-        status: 401
-      )
-		end
-	end
-end
-```
+## Technical implementation details
+- One Page App using React, Flux and React Router
+- Both FrontEnd and BackEnd validation for better user feedback and higher security
+- Secure Password encryption with Brcypt
+- CSRF Authenticity Token enabled
+- Log In with facebook with OmniAuth Using OAuth2 Strategy
 
 ### Job rendering and editing
 

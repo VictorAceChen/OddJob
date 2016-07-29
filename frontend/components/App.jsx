@@ -2,8 +2,9 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var NavBar = require('./NavBar');
 var SearchBar = require('./SearchBar');
+var WideAd = require('./wideAd');
 
-var JobForm = require('./JobForm');
+var JobForm = require('./Job/JobForm');
 
 var Modal = require("react-modal");
 document.addEventListener("DOMContentLoaded", function(){
@@ -21,6 +22,7 @@ var App = React.createClass({
         <NavBar pathname={this.props.location.pathname}/>
         <SearchBar/>
         {this.props.children}
+        <WideAd/>
       </div>
     );
   }

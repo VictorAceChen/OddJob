@@ -6,19 +6,35 @@ var SessionApiUtil = require('./../util/session_api_util');
 var hashHistory = require('react-router').hashHistory;
 
 var Modal = require("react-modal");
-var JobForm = require('./JobForm');
+var JobForm = require('./Job/JobForm');
+var Actions = require("../actions/client_actions");
 
 
 var SearchBar = React.createClass({
+  contextTypes: {router: React.PropTypes.object.isRequired},
 	mixins: [LinkedStateMixin],
 
   getInitialState: function(){
     return{search_str: ""};
   },
 
+// 	handleSubmit: function(event){
+// 	event.preventDefault();
+//
+// 	JobStoreActions.resetReceived();
+// 	this.context.router.push({
+// 		pathname:'/jobs',
+// 		query:{search_str : this.state.search_str}
+// 	});
+// },
+
   handleSubmit: function(event){
     event.preventDefault();
-    hashHistory.push("jobs/" );
+    // hashHistory.push("jobs/" );
+			this.context.router.push({
+				pathname:'/jobs',
+				query:{search_str : this.state.search_str}
+			});
   },
 
   render: function() {
