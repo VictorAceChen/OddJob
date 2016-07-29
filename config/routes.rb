@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  # root to: 'rooms#show'
+  root to: 'rooms#show'
 
-  root to: "static_pages#root"
+  # root to: "static_pages#root"
 
   namespace :api, defaults: {format: :json} do
 
@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   get '/auth/twitter/callback', to: 'api/sessions#twitter_create'
   get '/auth/facebook/callback', to: "api/sessions#create_with_facebook"
 
-
+  mount ActionCable.server => '/cable'
 end
