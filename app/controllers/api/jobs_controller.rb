@@ -2,22 +2,13 @@ class Api::JobsController < ApplicationController
 	before_action :require_signed_in!, only: [:create, :destroy]
 
 	def index
-		# uri    = URI.parse(url)
-		# params = CGI.parse(uri.query)
+		search_str = params[:search_str]
+
+		@jobs = Job.where("title ILIKE :str
+		OR location ILIKE :str
+		OR description ILIKE :str",
+	  {str: "%#{search_str}%"}).reverse
 		# @jobs = Job.all.reverse
-		search = params[:search_str]
-		@query = <<-SQL.strip_heredoc
-					title LIKE %#{search}%
-					OR location LIKE %#{search}%
-					OR description LIKE %#{search}%
-				SQL
-
-		@jobs = Job.where("title LIKE :str
-		OR location LIKE :str
-		OR description LIKE :str",
-	  {str: params[:search_str]}).reverse
-
-		@jobs = Job.all.reverse
 	end
 
 	def show

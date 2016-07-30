@@ -3,8 +3,8 @@ var ApiUtil = require('../util/job_api_util.js');
 var JobConstants = require('../constants/job_constants.js');
 
 module.exports = {
-  fetchJobs: function () {
-    ApiUtil.fetchJobs();
+  fetchJobs: function (search_str) {
+    ApiUtil.fetchJobs(search_str);
   },
 
   getJob: function (id) {

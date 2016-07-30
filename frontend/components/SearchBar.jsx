@@ -27,6 +27,14 @@ var SearchBar = React.createClass({
 // 		query:{search_str : this.state.search_str}
 // 	});
 // },
+componentDidMount: function () {
+  this.myJobListener = MyJobStore.addListener(this.getMyJobs);
+  MyJobClientActions.fetchMyJobs();
+},
+
+componentWillUnmount: function () {
+  this.myJobListener.remove();
+},
 
   handleSubmit: function(event){
     event.preventDefault();

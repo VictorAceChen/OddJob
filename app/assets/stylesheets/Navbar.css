@@ -1,4 +1,30 @@
+
+
+.navBi {
+   display: -moz-inline-box;
+   display: inline-block;
+   padding: 9px 12px;
+   margin: 0;
+   list-style-type: none;
+   outline: none;
+   cursor: pointer;
+   color: #4869EF;
+   height: 100%;
+}
+
+.navBi:hover{
+  background: 	#84BDF8;
+  color: white;
+  font-weight: bold;
+}
+
 .userOptionItem {
   color: blue;
-  margin: ;
+  margin: 10px 0px 10px 0px;
+}
+
+.userOptionItem:hover{
+  background: 	#84BDF8;
+  color: white;
+  font-weight: bold;
 }

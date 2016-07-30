@@ -2,8 +2,10 @@ var ServerActions = require('../actions/server_actions.js');
 
 module.exports = {
   fetchJobs: function () {
+    var search_str = getParameterByName('search_str'); 
     $.ajax({
       url: "api/jobs",
+      data: { search_str: search_str },
       success: function (jobs) {
         ServerActions.receiveAll(jobs);
       },

@@ -39,25 +39,6 @@
    margin-bottom: 9px;
 }
 
-.navBi {
-   display: -moz-inline-box;
-   display: inline-block;
-   padding: 9px 12px;
-   margin: 0;
-   list-style-type: none;
-   outline: none;
-   cursor: pointer;
-   color: #4869EF;
-
-   height: 100%;
-}
-
-.navBi:hover{
-  background: 	#84BDF8;
-  color: white;
-  font-weight: bold;
-}
-
 #userOptions {
   z-index: 2;
   position: absolute;

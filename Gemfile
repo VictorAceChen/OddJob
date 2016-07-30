@@ -9,7 +9,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
- 
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
@@ -21,12 +21,14 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # Use Puma as the app server
 gem 'puma'
+
+gem 'bcrypt'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'figaro'
 gem 'aws-sdk', '>= 2.0'
-
+gem "paperclip"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

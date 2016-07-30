@@ -1,12 +1,10 @@
-.slick-track {
-    position: relative;
-    width: 700px;
+.slick-container {
+  width: 100%;
+  overflow: hidden;
+   margin:auto;
+  width: 50vw; /* be as wide as the viewport */
 }
 
 .slick-track img {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 150px;
-    width: inherit;
-}
+  height: 150px;
+} 

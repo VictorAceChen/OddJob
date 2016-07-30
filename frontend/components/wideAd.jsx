@@ -11,8 +11,7 @@ var settings = {
       slidesToScroll: 1,
       adaptiveHeight: true,
       arrows: false,
-      fade: true,
-      trackWidth: 750
+      fade: true
     };
 
 

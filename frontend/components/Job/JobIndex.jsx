@@ -44,7 +44,7 @@ module.exports = React.createClass({
 
   componentDidMount: function () {
     this.jobListener = JobStore.addListener(this.getJobs);
-    ClientActions.fetchJobs();
+    ClientActions.fetchJobs(this.props.search_str);
     rotate();
   },
 
