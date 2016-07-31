@@ -45,6 +45,9 @@ var MyJobIndex = React.createClass({
                 }
               </ul>
             </td>
+            <td>
+
+            </td>
           </tr>
         </tbody>
         </table>

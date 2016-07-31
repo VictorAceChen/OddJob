@@ -19,7 +19,7 @@ var wideAd = React.createClass({
 
   render: function () {
     return (
-      <Slider className="slick-container"{...settings}>
+      <Slider className="slick-wide"{...settings}>
         {/*<img src="http://67.media.tumblr.com/tumblr_loptl0yRJn1qf7znjo1_400.gif"/>*/}
         <img src="https://66.media.tumblr.com/tumblr_maegvjEMZ21r18azjo1_500.gif"/>
         <img src="https://66.media.tumblr.com/08648f5e116800625ce267a076730517/tumblr_o0g0ynlHaj1sa11jco1_540.gif"/>

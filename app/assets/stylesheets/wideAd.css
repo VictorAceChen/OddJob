@@ -1,10 +1,11 @@
-.slick-container {
+.slick-wide {
   width: 100%;
   overflow: hidden;
-   margin:auto;
+  margin:auto;
+  padding-top: 20px;
   width: 50vw; /* be as wide as the viewport */
 }
 
-.slick-track img {
+.slick-wide .slick-list .slick-track img {
   height: 150px;
-} 
+}

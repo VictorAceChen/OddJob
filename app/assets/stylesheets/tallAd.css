@@ -1,0 +1,16 @@
+.JobIndex td {
+    vertical-align: top;
+}
+
+.slick-tall {
+  top: 10px;
+  height: 400px;
+  overflow: hidden;
+  margin:auto;
+  width: 40vw; /* be as wide as the viewport */
+}
+
+.slick-tall img {
+  /*width: 150px;*/
+  height: 400px;
+}

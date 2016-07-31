@@ -1,3 +1,9 @@
+
+
+li:nth-child(odd) {
+   background: LightGray;
+ }
+
 .job_idx_row {
   padding: 20px;
   margin-bottom: 1em;
@@ -38,17 +44,6 @@ a.jobtitle {
   height: 100px;
 }
 
-.auxCol {
-  width: 450px;
-  position: fixed;
-  right: 15%;
-  top: 20%;
-}
-
-.auxCol img{
-  max-width:100%;
-  max-height:100%;
-}
 .summary {
   width:  300px;
 }
