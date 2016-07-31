@@ -20,12 +20,12 @@ var SearchBar = React.createClass({
 
   handleSubmit: function(event){
     event.preventDefault();
-    ClientActions.fetchJobs();
-
+    
 		this.context.router.push({
 			pathname:'/jobs',
 			query:{search_str : this.state.search_str}
 		});
+    ClientActions.fetchJobs();
   },
 
   render: function() {
