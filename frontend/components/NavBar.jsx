@@ -49,18 +49,22 @@ var NavBar = React.createClass({
 
     var userOptions = (
       <div id="userOptions">
-          <Link to={"/account/"} onClick={this.closeUserOptions}>
-            <div className="userOptionItem">
-              Account
-            </div>
-          </Link>
-        <div className="userOptionItem">
-          <Link to={"/my_jobs/"} onClick={this.closeUserOptions}>My Jobs</Link>
-        </div>
-        <div className="userOptionItem">
-          <div className="userNameRepeat">{SessionStore.currentUser().username}</div>
-          <a href="" onClick={ SessionApiUtil.logout }>Sign out</a>
-        </div>
+        <Link to={"/account/"} onClick={this.closeUserOptions}>
+          <div className="userOptionItem">
+            Account
+          </div>
+        </Link>
+        <Link to={"/my_jobs/"} onClick={this.closeUserOptions}>
+          <div className="userOptionItem">
+            My Jobs
+          </div>
+        </Link>
+        <div className="userNameRepeat">{SessionStore.currentUser().username}</div>
+        <a href="" onClick={ SessionApiUtil.logout }>
+          <div className="userOptionItem">
+            Sign out
+          </div>
+        </a>
       </div>
     );
 
