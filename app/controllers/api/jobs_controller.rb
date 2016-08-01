@@ -3,11 +3,16 @@ class Api::JobsController < ApplicationController
 
 	def index
 		search_str = params[:search_str]
+		search_str = search_str.lstrip.rstrip
 
-		@jobs = Job.where("title ILIKE :str
-		OR location ILIKE :str
-		OR description ILIKE :str",
-	  {str: "%#{search_str}%"}).reverse
+		if(search_str.empty?)
+			@jobs = nil
+		else
+			@jobs = Job.where("title ILIKE :str
+			OR location ILIKE :str
+			OR description ILIKE :str",
+		  {str: "%#{search_str}%"}).reverse
+		end
 		# @jobs = Job.all.reverse
 	end
 

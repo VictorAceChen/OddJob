@@ -28,6 +28,14 @@ module.exports = React.createClass({
   },
 
   render: function () {
+
+    if(this.state.jobs.length < 1)
+      return(
+        <div className="job-index">
+          <p className="failSearch">No results for your search</p>
+        </div>
+      )
+
     return (
 
       <div className="job-index">

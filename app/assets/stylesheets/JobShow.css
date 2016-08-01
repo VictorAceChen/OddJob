@@ -33,3 +33,9 @@
 .job_summary {
   width: 250px;
 }
+
+.failSearch{
+  font-weight: bold;
+  text-align: center;
+  font-size: 200%;
+}
