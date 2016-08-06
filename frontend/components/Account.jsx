@@ -12,11 +12,35 @@ var Account = React.createClass({
   getInitialState: function() {
     return({
       imageFile: null,
-      imageUrl: null
+      imageUrl: SessionStore.currentUser().image_url
     });
   },
 
+  updateFile: function(e){
+    var file = e.currentTarget.files[0];
+    var fileReader = new FileReader();
+    fileReader.onloadend = function() {
+      this.setState({
+        imageFile: file,
+        imageUrl: fileReader.result
+      });
+    }.bind(this);
 
+    if(file)
+    fileReader.readAsDataURL(file);
+  },
+
+  editSuccess:function () {
+    this.context.router.push("home");
+  },
+  
+  handleSubmit: function(e) {
+    e.preventDefault();
+    var formData = new FormData();
+    // formData.append('user[username]', this.state.username);
+    formData.append('user[image]', this.state.imageFile);
+    UserApiUtil.editUser(formData, this.editSuccess);
+  },
 
   componentWillMount: function () {
     SessionApiUtil.fetchCurrentUser();
@@ -32,9 +56,12 @@ var Account = React.createClass({
         <p>Username:</p>{SessionStore.currentUser().username}
         <br/><br/>
           <p>Current Logo:&nbsp;</p>
-            <br/><br/>
+            <br/>
             <div>
-            <img src={SessionStore.currentUser().image_url} className="index_logo group"/>
+            <img src={this.state.imageUrl} className="index_logo group"/>
+            <input type="file" onChange={this.updateFile}/>
+            <br/>
+            <button onClick={this.handleSubmit}>Update</button>
             </div>
             <br/><br/><br/><br/><br/><br/><br/>
         <div className="separator_bottom separator">&nbsp;</div>
