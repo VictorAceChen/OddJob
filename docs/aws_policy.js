@@ -8,10 +8,10 @@
         "s3:*"
       ],
       "Resource": [
-        "arn:aws:s3:::BUCKET-NAME-DEV",
-        "arn:aws:s3:::BUCKET-NAME-DEV/*",
-        "arn:aws:s3:::BUCKET-NAME-PRO",
-        "arn:aws:s3:::BUCKET-NAME-PRO/*"
+        "arn:aws:s3:::oddjob-dev",
+        "arn:aws:s3:::oddjob-dev/*",
+        "arn:aws:s3:::oddjob-pro",
+        "arn:aws:s3:::oddjob-pro/*"
       ]
     }
   ]

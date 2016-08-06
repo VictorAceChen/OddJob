@@ -1,6 +1,6 @@
 var React = require('react');
 
-var Link = require('react-router').Link; 
+var Link = require('react-router').Link;
 
 var SessionApiUtil = require('./../util/session_api_util');
 var SessionStore = require('./../stores/session_store');
@@ -34,7 +34,7 @@ var Account = React.createClass({
           <p>Current Logo:&nbsp;</p>
             <br/><br/>
             <div>
-            <img src={SessionStore.currentUser().logo_url} className="index_logo group"/>
+            <img src={SessionStore.currentUser().image_url} className="index_logo group"/>
             </div>
             <br/><br/><br/><br/><br/><br/><br/>
         <div className="separator_bottom separator">&nbsp;</div>
