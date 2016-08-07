@@ -209,7 +209,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   omniauth-twitter
-  paperclip
+  paperclip (~> 5.0.0.beta1)
   pg
   puma
   rails (>= 5.0.0.beta1, < 5.1)
