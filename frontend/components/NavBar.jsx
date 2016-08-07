@@ -11,7 +11,20 @@ var JobForm = require('./Job/JobForm');
 
 var NavBar = React.createClass({
   getInitialState: function(){
-    return {showUserOptions: false, jobFormOpen: false, loginOpen: false};
+    return {showUserOptions: false, jobFormOpen: false, loginOpen: false
+      , avatar: SessionStore.currentUser().image_url};
+  },
+
+  componentDidMount: function () {
+    this.sessionListener = SessionStore.addListener(this.getUser);
+  },
+
+  componentWillUnmount: function () {
+    this.sessionListener.remove();
+  },
+
+  getUser: function () {
+    this.setState({ avatar: SessionStore.currentUser().image_url });
   },
 
   closeModal: function(){

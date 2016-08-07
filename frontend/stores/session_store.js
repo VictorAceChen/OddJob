@@ -41,5 +41,5 @@ SessionStore.__onDispatch = function (payload) {
       break;
   }
 };
-
+window.SessionStore = SessionStore;
 module.exports = SessionStore;
