@@ -72,6 +72,7 @@ var NavBar = React.createClass({
     	return (
         <div id="u_nav">
           <span className="navBi" id="userOptionsLabel" tabIndex="0" onClick={this.onClickUserNav}>
+            <img src={SessionStore.currentUser().image_url} className="navImg"/>
             <b>{SessionStore.currentUser().username}</b>
           </span>
           { this.state.showUserOptions ? userOptions : null }
@@ -100,8 +101,7 @@ var NavBar = React.createClass({
       <div id="p_nav">
           <a href="/" title="Jobs" id="jobsLink" className="selected">
             <strong className="navBi">Find Jobs</strong>
-
-            </a>
+          </a>
 
         <span className="navBi" onClick={this.postJob}>
           <strong id="empLink">Employers / Post Job</strong>

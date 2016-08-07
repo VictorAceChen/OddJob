@@ -18,7 +18,7 @@ class Job < ActiveRecord::Base
   end
 
   def logo_url
-    self.employer.logo_url
+    self.employer.image.url
   end
 
 #for amazon bucket

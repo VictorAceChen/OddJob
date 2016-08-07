@@ -1,6 +1,10 @@
 
 
 .navBi {
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
    display: -moz-inline-box;
    display: inline-block;
    padding: 9px 12px;
@@ -10,6 +14,17 @@
    cursor: pointer;
    color: #4869EF;
    height: 100%;
+}
+
+.navBi b{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    padding-bottom: 10px;
+}
+
+.navBi a{
+  height: 100%;
 }
 
 .navBi:hover{
@@ -27,4 +42,9 @@
   background: 	#84BDF8;
   color: white;
   font-weight: bold;
+}
+
+.navImg{
+  max-height: 20px;
+  padding-right: 15px;
 }

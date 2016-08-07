@@ -12,43 +12,43 @@ vladimir = User.create(username: "Vladimir", password: "password")
 tyrell = User.create(
   username: "Tyrell",
   password: "password",
-  logo_url: "https://m.popkey.co/452923/4M5rR.gif"
+  image: "https://m.popkey.co/452923/4M5rR.gif"
   )
 
 monarch = User.create(
   username: "Monarch",
   password: "password",
-  logo_url: "https://img1.etsystatic.com/013/0/7192588/il_fullxfull.435146537_ogcl.jpg"
+  image: "https://img1.etsystatic.com/013/0/7192588/il_fullxfull.435146537_ogcl.jpg"
   )
 
 gustavo = User.create(
   username: "Gustavo",
   password: "password",
-  logo_url: "http://vignette2.wikia.nocookie.net/breakingbad/images/5/5c/Los_Pollos.png/revision/latest?cb=20130713042010"
+  image: "http://vignette2.wikia.nocookie.net/breakingbad/images/5/5c/Los_Pollos.png/revision/latest?cb=20130713042010"
 	)
 
 wesker = User.create(
   username: "Wesker",
   password: "password",
-  logo_url: "https://media3.giphy.com/media/Rjp1itgZHzGk8/200.gif"
+  image: "https://media3.giphy.com/media/Rjp1itgZHzGk8/200.gif"
 	)
 
 t1000 = User.create(
   username: "t1000",
   password: "password",
-  logo_url: "http://vignette1.wikia.nocookie.net/villains/images/0/05/Skynet_Logo.jpg/revision/latest?cb=20130327183511"
+  image: "http://vignette1.wikia.nocookie.net/villains/images/0/05/Skynet_Logo.jpg/revision/latest?cb=20130327183511"
 	)
 
 redskull = User.create(
   username: "redskull",
   password: "password",
-  logo_url: "http://vignette3.wikia.nocookie.net/marvelcinematicuniverse/images/4/4b/H_alternate_3.png/revision/latest/scale-to-width-down/270?cb=20160331154244"
+  image: "http://vignette3.wikia.nocookie.net/marvelcinematicuniverse/images/4/4b/H_alternate_3.png/revision/latest/scale-to-width-down/270?cb=20160331154244"
 	)
 
 commander = User.create(
   username: "commander",
   password: "password",
-  logo_url: "http://orig05.deviantart.net/7fc4/f/2009/098/8/3/gi_joe_cobra_logo_by_flightcrank.jpg"
+  image: "http://orig05.deviantart.net/7fc4/f/2009/098/8/3/gi_joe_cobra_logo_by_flightcrank.jpg"
 	)
 
 

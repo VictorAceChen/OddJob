@@ -8,6 +8,10 @@ var UserApiUtil = require('./../util/user_api_util');
 
 
 var Account = React.createClass({
+  
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
 
   getInitialState: function() {
     return({
@@ -31,9 +35,9 @@ var Account = React.createClass({
   },
 
   editSuccess:function () {
-    this.context.router.push("home");
+    this.context.router.push("/");
   },
-  
+
   handleSubmit: function(e) {
     e.preventDefault();
     var formData = new FormData();
