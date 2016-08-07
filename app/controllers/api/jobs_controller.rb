@@ -11,7 +11,7 @@ class Api::JobsController < ApplicationController
 			@jobs = Job.where("title ILIKE :str
 			OR location ILIKE :str
 			OR description ILIKE :str",
-		  {str: "%#{search_str}%"}).reverse
+		  {str: "%#{search_str}%"}).order(created_at: :desc)
 		end
 		# @jobs = Job.all.reverse
 	end
