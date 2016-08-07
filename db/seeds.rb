@@ -12,43 +12,43 @@ vladimir = User.create(username: "Vladimir", password: "password")
 tyrell = User.create(
   username: "Tyrell",
   password: "password",
-  image: "https://m.popkey.co/452923/4M5rR.gif"
+  logo_url: "https://m.popkey.co/452923/4M5rR.gif"
   )
 
 monarch = User.create(
   username: "Monarch",
   password: "password",
-  image: "https://img1.etsystatic.com/013/0/7192588/il_fullxfull.435146537_ogcl.jpg"
+  logo_url: "https://img1.etsystatic.com/013/0/7192588/il_fullxfull.435146537_ogcl.jpg"
   )
 
 gustavo = User.create(
   username: "Gustavo",
   password: "password",
-  image: "http://vignette2.wikia.nocookie.net/breakingbad/images/5/5c/Los_Pollos.png/revision/latest?cb=20130713042010"
+  logo_url: "http://vignette2.wikia.nocookie.net/breakingbad/logo_urls/5/5c/Los_Pollos.png/revision/latest?cb=20130713042010"
 	)
 
 wesker = User.create(
   username: "Wesker",
   password: "password",
-  image: "https://media3.giphy.com/media/Rjp1itgZHzGk8/200.gif"
+  logo_url: "https://media3.giphy.com/media/Rjp1itgZHzGk8/200.gif"
 	)
 
 t1000 = User.create(
   username: "t1000",
   password: "password",
-  image: "http://vignette1.wikia.nocookie.net/villains/images/0/05/Skynet_Logo.jpg/revision/latest?cb=20130327183511"
+  logo_url: "http://vignette1.wikia.nocookie.net/villains/logo_urls/0/05/Skynet_Logo.jpg/revision/latest?cb=20130327183511"
 	)
 
 redskull = User.create(
   username: "redskull",
   password: "password",
-  image: "http://vignette3.wikia.nocookie.net/marvelcinematicuniverse/images/4/4b/H_alternate_3.png/revision/latest/scale-to-width-down/270?cb=20160331154244"
+  logo_url: "http://vignette3.wikia.nocookie.net/marvelcinematicuniverse/logo_urls/4/4b/H_alternate_3.png/revision/latest/scale-to-width-down/270?cb=20160331154244"
 	)
 
 commander = User.create(
   username: "commander",
   password: "password",
-  image: "http://orig05.deviantart.net/7fc4/f/2009/098/8/3/gi_joe_cobra_logo_by_flightcrank.jpg"
+  logo_url: "http://orig05.deviantart.net/7fc4/f/2009/098/8/3/gi_joe_cobra_logo_by_flightcrank.jpg"
 	)
 
 

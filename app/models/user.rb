@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
 	before_validation :ensure_session_token_uniqueness
 
 
-  has_attached_file :image, default_url: "http://www.villagehatshop.com/photos/product/standard/2393460S1799/derby-bowler-hats/harker-bowler-hat.jpg"
+	  # has_attached_file :image, default_url: "http://www.villagehatshop.com/photos/product/standard/2393460S1799/derby-bowler-hats/harker-bowler-hat.jpg"
+  has_attached_file :image, default_url: :logo_url
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   has_many(
