@@ -20,5 +20,5 @@ Rails.application.routes.draw do
   get '/auth/twitter/callback', to: 'api/sessions#twitter_create'
   get '/auth/facebook/callback', to: "api/sessions#create_with_facebook"
 
-  mount ActionCable.server => '/cable'
+  # mount ActionCable.server => '/cable'
 end
